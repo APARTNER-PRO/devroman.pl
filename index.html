@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Roman Matviy – Full-stack developer Laravel, WordPress, PrestaShop. 7+ lat doświadczenia komercyjnego. Szukam klientów z Polski i Europy." />
+  <title>Roman Matviy – Full-Stack Developer | devroman.pl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0e13;
+      --bg2:       #111520;
+      --bg3:       #161b28;
+      --surface:   #1c2235;
+      --border:    #242c42;
+      --accent:    #3b82f6;
+      --accent2:   #60a5fa;
+      --accent3:   #93c5fd;
+      --green:     #34d399;
+      --text:      #e2e8f0;
+      --muted:     #8494b2;
+      --light:     #f1f5f9;
+      --heading:   #ffffff;
+      --radius:    12px;
+      --radius-lg: 20px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(11,14,19,0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--heading);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #2563eb !important; color: #fff !important; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    section { padding: 100px 0; }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -200px;
+      pointer-events: none;
+    }
+    .hero-glow2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(52,211,153,0.08) 0%, transparent 70%);
+      bottom: 100px;
+      left: -100px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: center;
+      padding: 120px 2rem 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 999px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent2);
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .hero-badge::before { content: '●'; color: var(--green); font-size: 0.6rem; }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .accent { color: var(--accent2); }
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(90deg, var(--accent2), var(--green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 540px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .hero-sub strong { color: var(--text); font-weight: 500; }
+    .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); box-shadow: 0 8px 32px rgba(59,130,246,0.45); }
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent2); transform: translateY(-1px); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-item { }
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--accent2); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+
+    /* Hero card */
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--green));
+    }
+    .hero-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+    .hero-card-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--heading);
+      margin-bottom: 0.25rem;
+    }
+    .hero-card-role { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.5rem; }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .tech-tag {
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      color: var(--accent3);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+    }
+    .avail-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 8px;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      color: var(--green);
+    }
+    .avail-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content: '//'; opacity: 0.5; }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── O MNIE ── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1.25rem; font-weight: 300; line-height: 1.8; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .highlight-card:hover { border-color: var(--accent); }
+    .highlight-icon {
+      width: 40px; height: 40px;
+      border-radius: 10px;
+      background: rgba(59,130,246,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .highlight-title { font-weight: 600; color: var(--heading); font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .highlight-desc { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+    /* ── TECHNOLOGIE ── */
+    #skills { background: var(--bg); }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .skill-group {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: border-color 0.2s;
+    }
+    .skill-group:hover { border-color: rgba(59,130,246,0.4); }
+    .skill-group-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+    .skill-group-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: rgba(59,130,246,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .skill-group-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--heading);
+    }
+    .skill-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skill-pill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+    }
+    .skills-value {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(52,211,153,0.05));
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: var(--radius);
+      padding: 1.75rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .value-item { }
+    .value-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .value-title { font-weight: 600; color: var(--heading); font-size: 0.9rem; margin-bottom: 0.3rem; }
+    .value-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+
+    /* ── USŁUGI ── */
+    #services { background: var(--bg2); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(59,130,246,0.04), transparent);
+      opacity: 0;
+      transition: opacity 0.25s;
+    }
+    .service-card:hover { border-color: rgba(59,130,246,0.4); transform: translateY(-3px); }
+    .service-card:hover::after { opacity: 1; }
+    .service-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .service-icon { font-size: 1.75rem; margin-bottom: 1rem; }
+    .service-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--heading);
+      margin-bottom: 0.75rem;
+    }
+    .service-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
+
+    /* ── DOŚWIADCZENIE ── */
+    #experience { background: var(--bg); }
+    .timeline { max-width: 780px; margin: 3rem auto 0; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0; bottom: 0;
+      width: 1px;
+      background: var(--border);
+    }
+    .timeline-item {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      padding-left: 60px;
+      position: relative;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: 12px;
+      top: 6px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .timeline-content {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      flex: 1;
+      transition: border-color 0.2s;
+    }
+    .timeline-content:hover { border-color: rgba(59,130,246,0.4); }
+    .timeline-company {
+      font-size: 0.75rem;
+      color: var(--accent2);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+    .timeline-role {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: var(--heading);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+    .timeline-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.7; }
+
+    /* ── PORTFOLIO ── */
+    #portfolio { background: var(--bg2); }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .project-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+    .project-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-2px); }
+    .project-type {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .project-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+    .project-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.6; }
+    .project-stack {
+      margin-top: 0.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .stack-tag {
+      font-size: 0.7rem;
+      color: var(--muted);
+      background: var(--surface);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    /* ── OPINIE ── */
+    #testimonials { background: var(--bg); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testimonial-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+    .testimonial-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 1rem; }
+    .testimonial-text { color: var(--text); font-size: 0.9rem; line-height: 1.75; margin-bottom: 1.5rem; font-style: italic; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .author-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .author-name { font-weight: 600; color: var(--heading); font-size: 0.875rem; }
+    .author-role { color: var(--muted); font-size: 0.8rem; }
+    .trust-row {
+      margin-top: 2.5rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+    .trust-row a { color: var(--accent2); text-decoration: none; }
+
+    /* ── JAK PRACUJĘ ── */
+    #process { background: var(--bg2); }
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -0.5rem;
+      top: 1.25rem;
+      color: var(--border);
+      font-size: 1.2rem;
+      transform: translateX(50%);
+    }
+    .step-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--accent2);
+      margin: 0 auto 1rem;
+      transition: all 0.2s;
+    }
+    .process-step:hover .step-circle { border-color: var(--accent); background: rgba(59,130,246,0.1); }
+    .step-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+    .step-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.6; }
+    .process-note {
+      margin-top: 2.5rem;
+      background: rgba(59,130,246,0.06);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.75rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+      text-align: center;
+    }
+    .process-note strong { color: var(--accent2); }
+
+    /* ── KONTAKT ── */
+    #contact { background: var(--bg); }
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-channels {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .channel {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .channel:hover { border-color: var(--accent); transform: translateX(4px); }
+    .channel-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .channel-tg { background: rgba(0,136,204,0.15); }
+    .channel-em { background: rgba(59,130,246,0.12); }
+    .channel-li { background: rgba(10,102,194,0.15); }
+    .channel-gh { background: rgba(110,118,129,0.15); }
+    .channel-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .channel-value { color: var(--text); font-weight: 500; font-size: 0.95rem; }
+    .contact-cta-box {
+      background: linear-gradient(135deg, var(--surface), var(--bg3));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--green));
+    }
+    .cta-box-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--heading);
+      margin-bottom: 0.75rem;
+    }
+    .cta-box-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.75rem; line-height: 1.7; }
+    .cta-bullets { margin: 1.5rem 0; }
+    .cta-bullet {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+    .cta-bullet::before { content: '✓'; color: var(--green); font-weight: 700; }
+    .response-note {
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .response-note span { color: var(--green); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--heading);
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .animate {
+      animation: fadeInUp 0.6s ease forwards;
+      opacity: 0;
+    }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-card { display: none; }
+      .about-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .process-step::after { display: none; }
+      .contact-wrapper { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .skills-value { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      section { padding: 70px 0; }
+      .hero-inner { padding: 100px 1.5rem 60px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .container { padding: 0 1.5rem; }
+      .hero-stats { flex-direction: column; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">dev<span>roman</span>.pl</a>
+    <ul class="nav-links">
+      <li><a href="#about">O mnie</a></li>
+      <li><a href="#skills">Technologie</a></li>
+      <li><a href="#services">Usługi</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#experience">Doświadczenie</a></li>
+      <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge animate">Dostępny dla nowych projektów</div>
+      <h1 class="hero-title animate delay-1">
+        Full-stack developer<br>
+        <span class="line2">Laravel · WordPress · PrestaShop</span>
+        do Twoich projektów
+      </h1>
+      <p class="hero-sub animate delay-2">
+        Roman Matviy – programista z <strong>ponad 7-letnim doświadczeniem komercyjnym</strong>.
+        Tworzę aplikacje webowe, sklepy internetowe i systemy backendowe w technologiach
+        <strong>Laravel, PHP, Vue.js, PrestaShop i WordPress</strong>.
+        Pracuję z klientami z Polski i Europy.
+      </p>
+      <div class="btn-group animate delay-3">
+        <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">
+          📩 Napisz na Telegramie
+        </a>
+        <a href="mailto:roman@matviy.pp.ua" class="btn btn-secondary">
+          ✉️ Wyślij e-mail
+        </a>
+      </div>
+      <div class="hero-stats animate delay-4">
+        <div class="stat-item">
+          <div class="stat-num">7<span>+</span></div>
+          <div class="stat-label">Lat doświadczenia</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">50<span>+</span></div>
+          <div class="stat-label">Zrealizowanych projektów</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Firm i agencji</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">🇵🇱<span></span></div>
+          <div class="stat-label">Obsługa po polsku</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-card animate delay-2">
+      <div class="hero-avatar">RM</div>
+      <div class="hero-card-name">Roman Matviy</div>
+      <div class="hero-card-role">Full-Stack Developer · Lwów, Ukraina</div>
+      <div class="tech-tags">
+        <span class="tech-tag">Laravel</span>
+        <span class="tech-tag">PHP</span>
+        <span class="tech-tag">Vue.js</span>
+        <span class="tech-tag">PrestaShop</span>
+        <span class="tech-tag">WordPress</span>
+        <span class="tech-tag">REST API</span>
+        <span class="tech-tag">MySQL</span>
+        <span class="tech-tag">Docker</span>
+      </div>
+      <div class="avail-row">
+        <div class="avail-dot"></div>
+        Dostępny na nowe zlecenia
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O MNIE -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-label">Kim jestem</div>
+        <h2 class="section-title">Programista, który dostarcza gotowe rozwiązania</h2>
+        <p>Jestem <strong>full-stack developerem z ponad 7-letnim stażem komercyjnym</strong>. Mieszkam we Lwowie na Ukrainie i od lat współpracuję z klientami z Polski, Europy i rynku angielskojęzycznego.</p>
+        <p>Specjalizuję się w <strong>backendzie opartym na Laravel i PHP</strong> – buduję REST API, systemy zarządzania, panele administracyjne i integracje z zewnętrznymi usługami. W świecie e-commerce znam <strong>PrestaShop, WordPress i WooCommerce</strong> od podszewki – zarówno od strony wdrożeń, jak i indywidualnych modyfikacji.</p>
+        <p>Od strony frontendowej pracuję z <strong>Vue.js, JavaScript i nowoczesnymi narzędziami</strong> jak Vite czy TailwindCSS. Dbam o to, żeby strony były szybkie, responsywne i łatwe w utrzymaniu.</p>
+        <p>Posiadam kilkanaście <strong>certyfikatów z PHP, SQL, JavaScript i PrestaShop</strong>, ale przede wszystkim – projekty, które działają i przynoszą realne efekty. Stale się rozwijam i śledzę najnowsze rozwiązania w branży.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <div class="highlight-icon">⚙️</div>
+          <div>
+            <div class="highlight-title">Solidny backend</div>
+            <div class="highlight-desc">Laravel, PHP, Docker, REST API – buduję wydajne i bezpieczne systemy serwerowe, które skalują się wraz z Twoim biznesem.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🛒</div>
+          <div>
+            <div class="highlight-title">E-commerce bez kompromisów</div>
+            <div class="highlight-desc">Wdrożenia i rozbudowa sklepów PrestaShop, WooCommerce i Thirty Bees – integracje, moduły, migracje danych.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🎨</div>
+          <div>
+            <div class="highlight-title">Nowoczesny frontend</div>
+            <div class="highlight-desc">Vue.js, TailwindCSS, Vite – interfejsy, które dobrze wyglądają i działają płynnie na każdym urządzeniu.</div>
+          </div>
+        </div>
+        <div class="highlight-card">
+          <div class="highlight-icon">🤝</div>
+          <div>
+            <div class="highlight-title">Długoterminowa współpraca</div>
+            <div class="highlight-desc">Cenię stałych klientów. Znam kontekst projektu, komunikuję się sprawnie i zawsze dotrzymuję ustalonych terminów.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIE -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Stack technologiczny</div>
+    <h2 class="section-title">Technologie i narzędzia</h2>
+    <p class="section-sub">Zestaw sprawdzonych technologii dobrany tak, żeby Twój projekt działał szybko, był łatwy w rozbudowie i prosty w utrzymaniu.</p>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">⚙️</div>
+          <div class="skill-group-name">Backend</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Laravel</span>
+          <span class="skill-pill">PHP 8+</span>
+          <span class="skill-pill">REST API</span>
+          <span class="skill-pill">MySQL / MariaDB</span>
+          <span class="skill-pill">Docker</span>
+          <span class="skill-pill">Composer</span>
+          <span class="skill-pill">Postman</span>
+          <span class="skill-pill">Swagger</span>
+          <span class="skill-pill">Livewire</span>
+          <span class="skill-pill">Filament</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🛒</div>
+          <div class="skill-group-name">E-commerce & CMS</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">PrestaShop</span>
+          <span class="skill-pill">WordPress</span>
+          <span class="skill-pill">WooCommerce</span>
+          <span class="skill-pill">Thirty Bees</span>
+          <span class="skill-pill">OpenCart</span>
+          <span class="skill-pill">ACF</span>
+          <span class="skill-pill">Elementor</span>
+          <span class="skill-pill">Twig / Smarty</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🎨</div>
+          <div class="skill-group-name">Frontend</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Vue.js 3</span>
+          <span class="skill-pill">JavaScript ES6+</span>
+          <span class="skill-pill">TypeScript</span>
+          <span class="skill-pill">jQuery</span>
+          <span class="skill-pill">HTML5 / CSS3</span>
+          <span class="skill-pill">SCSS / SASS</span>
+          <span class="skill-pill">TailwindCSS</span>
+          <span class="skill-pill">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🛠️</div>
+          <div class="skill-group-name">Narzędzia i środowisko</div>
+        </div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git / GitHub / GitLab</span>
+          <span class="skill-pill">Linux / SSH</span>
+          <span class="skill-pill">Vite</span>
+          <span class="skill-pill">Webpack</span>
+          <span class="skill-pill">Gulp</span>
+          <span class="skill-pill">Figma</span>
+          <span class="skill-pill">Trello / Asana</span>
+          <span class="skill-pill">GSAP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skills-value">
+      <div class="value-item">
+        <div class="value-icon">⚡</div>
+        <div class="value-title">Szybkość działania</div>
+        <div class="value-desc">Optymalizuję kod i zapytania do bazy – Twój sklep czy aplikacja ładują się błyskawicznie.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">📈</div>
+        <div class="value-title">Skalowalność</div>
+        <div class="value-desc">Buduję systemy, które rosną razem z Twoim biznesem bez konieczności przepisywania od zera.</div>
+      </div>
+      <div class="value-item">
+        <div class="value-icon">🔧</div>
+        <div class="value-title">Łatwa rozbudowa</div>
+        <div class="value-desc">Czysty kod i dokumentacja API sprawiają, że każdy programista może szybko wejść w projekt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USŁUGI -->
+<section id="services">
+  <div class="container">
+    <div class="section-label">Co robię</div>
+    <h2 class="section-title">Usługi</h2>
+    <p class="section-sub">Kompleksowa obsługa – od prostej strony firmowej po rozbudowane systemy backendowe i integracje z zewnętrznymi API.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-title">Strony internetowe dla firm</div>
+        <div class="service-desc">Landing page'e, strony firmowe, blogi i portale na WordPress. Szybkie, responsywne i zoptymalizowane pod SEO – gotowe do działania od pierwszego dnia.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🛍️</div>
+        <div class="service-title">Sklepy internetowe (PrestaShop / WooCommerce)</div>
+        <div class="service-desc">Wdrożenia sklepów od zera, migracje, własne moduły i szablony, integracje z systemami płatności, kurierami oraz CRM i ERP.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🖥️</div>
+        <div class="service-title">Aplikacje webowe i panele na Laravel</div>
+        <div class="service-desc">Systemy CRM, narzędzia do zarządzania projektami i zadaniami, kalendarze, REST API – dedykowane oprogramowanie dla Twojego biznesu.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔄</div>
+        <div class="service-title">Utrzymanie i rozwój projektów</div>
+        <div class="service-desc">Przejęcie istniejących projektów, poprawki błędów, optymalizacja wydajności, aktualizacje bezpieczeństwa i systematyczny rozwój funkcjonalności.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <div class="service-title">Integracje z zewnętrznymi usługami</div>
+        <div class="service-desc">Płatności online (Stripe, PayU, Przelewy24), serwisy kurierskie, systemy mailingowe, bramki SMS i dowolne zewnętrzne API.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👨‍💻</div>
+        <div class="service-title">Wsparcie techniczne i konsultacje</div>
+        <div class="service-desc">Audyt kodu i wydajności, dobór technologii, code review oraz wsparcie technicznie dla Twojego zespołu – gdy potrzebujesz eksperta na godziny.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOŚWIADCZENIE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Historia zawodowa</div>
+    <h2 class="section-title">Doświadczenie</h2>
+    <p class="section-sub">7+ lat pracy komercyjnej w różnych firmach i jako freelancer – w sumie kilkadziesiąt projektów dla klientów z różnych branż.</p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Freelance · Freelancehunt</div>
+          <div class="timeline-role">Laravel Backend & Full-Stack Developer</div>
+          <div class="timeline-desc">Realizacja projektów komercyjnych dla klientów indywidualnych i firm. Specjalizacja w budowie REST API, systemów zarządzania i integracji z zewnętrznymi serwisami przy użyciu Laravel, Livewire i Docker.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">NC-ONE.com</div>
+          <div class="timeline-role">Full-Stack Engineer · Laravel + Vue.js</div>
+          <div class="timeline-desc">Praca jako full-stack developer przy produktach webowych firmy. Codzienne zadania obejmowały Laravel, Vue.js, REST API, TailwindCSS i TypeScript. Projekty prowadzone w środowisku Docker z pełną dokumentacją Swagger.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">WebSpirit.com.ua</div>
+          <div class="timeline-role">Full-Stack PHP Developer</div>
+          <div class="timeline-desc">Tworzenie i rozbudowa aplikacji webowych w autorskim frameworku podobnym do Laravel i Symfony. Realizacja zadań w ustalonym czasie, praca z Figmą i pełnym stosem front-end: SCSS, JS, jQuery, AJAX.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">SoftSprint.net</div>
+          <div class="timeline-role">Full-Stack Developer · PrestaShop & WordPress</div>
+          <div class="timeline-desc">Tworzenie i modyfikacja motywów oraz modułów dla PrestaShop, WordPress i Thirty Bees. Praca z szablonami Smarty i Twig, PHP, SCSS i jQuery. Realizacja projektów e-commerce od wdrożenia po indywidualne dostosowania.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">Sure Lock & Key LLC</div>
+          <div class="timeline-role">WordPress Developer</div>
+          <div class="timeline-desc">Projektowanie i wdrażanie stron internetowych na WordPress z wykorzystaniem Carbon Fields i Twig. Implementacja rozwiązań multi-site w celu uproszczenia zarządzania kilkoma witryną jednocześnie.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-company">APARTNER.PRO</div>
+          <div class="timeline-role">Full-Stack Developer · WordPress, PrestaShop, Laravel</div>
+          <div class="timeline-desc">Projektowanie i budowa stron oraz sklepów w ekosystemie WordPress, PrestaShop i Laravel. Praca z ACF, Smarty, Twig i Laravel Mix – projekty obejmowały cały cykl: od projektu graficznego po wdrożenie na serwer.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <div class="section-label">Wybrane realizacje</div>
+    <h2 class="section-title">Portfolio</h2>
+    <p class="section-sub">Kilka przykładów projektów z różnych obszarów – od systemów backendowych po sklepy i narzędzia webowe.</p>
+
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="project-type">Laravel · System</div>
+        <div class="project-name">System zarządzania projektami</div>
+        <div class="project-desc">Narzędzie CRM/ERP dla firm do śledzenia postępów projektów i pracy zespołu. Zbudowane na Laravel z Filament Admin.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">FilamentPHP</span><span class="stack-tag">MySQL</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">Laravel · REST API</div>
+        <div class="project-name">Task Manager API</div>
+        <div class="project-desc">Pełne REST API do zarządzania zadaniami – uwierzytelnianie, role użytkowników, przypisywanie zadań, statusy i raporty.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">PHP</span><span class="stack-tag">Swagger</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">Laravel · Usługa</div>
+        <div class="project-name">System leadów (Leads CRM)</div>
+        <div class="project-desc">Platforma do zbierania i zarządzania leadami sprzedażowymi dla firmy z branży motoryzacyjnej. Integracja z formularzami i e-mailem.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vite</span><span class="stack-tag">Vue.js</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">Laravel · E-commerce</div>
+        <div class="project-name">Serwis sprzedaży płodów rolnych</div>
+        <div class="project-desc">Platforma B2B do handlu produktami rolnymi – ogłoszenia, wyceny, kontakt z dostawcami i panel zarządzania ofertami.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vite</span><span class="stack-tag">MySQL</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">Laravel · SaaS</div>
+        <div class="project-name">OpenHealth – serwis zdrowotny</div>
+        <div class="project-desc">Serwis do zarządzania danymi zdrowotnymi pacjentów z panelem lekarskim, harmonogramami wizyt i raportowaniem.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Livewire</span><span class="stack-tag">JS</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">WordPress · Usługi</div>
+        <div class="project-name">Intownhostel & Ifhostel</div>
+        <div class="project-desc">Strony dla hostelów z systemem rezerwacji, galerią i SEO. Szybkie wdrożenie na WordPress z Twig i ACF.</div>
+        <div class="project-stack"><span class="stack-tag">WordPress</span><span class="stack-tag">ACF</span><span class="stack-tag">jQuery</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">HTML/JS · Narzędzie</div>
+        <div class="project-name">InvoiceMaker</div>
+        <div class="project-desc">Darmowe narzędzie online do generowania faktur w kilku walutach – eksport do PDF, bez rejestracji.</div>
+        <div class="project-stack"><span class="stack-tag">HTML</span><span class="stack-tag">SCSS</span><span class="stack-tag">jQuery</span></div>
+      </div>
+      <div class="project-card">
+        <div class="project-type">Laravel · Kalendarz</div>
+        <div class="project-name">Calendar Service</div>
+        <div class="project-desc">Aplikacja do zarządzania wydarzeniami i harmonogramem – widok tygodniowy, miesięczny, CRUD zdarzeń i powiadomienia.</div>
+        <div class="project-stack"><span class="stack-tag">Laravel</span><span class="stack-tag">Vite</span><span class="stack-tag">jQuery</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPINIE -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-label">Co mówią klienci</div>
+    <h2 class="section-title">Opinie i zaufanie</h2>
+    <p class="section-sub">Pracuję z klientami długoterminowo, zawsze dobieram się do terminu i kończę to, co zaczynam. Opinie z portali freelancerskich potwierdzają to systematycznie.</p>
+
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">„Roman świetnie zrozumiał nasze wymagania i dostarczył sklep PrestaShop szybciej niż zakładaliśmy. Komunikacja na bieżąco, zero niespodzianek. Polecam jako rzetelnego partnera do projektów e-commerce."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div>
+            <div class="author-name">Marek K.</div>
+            <div class="author-role">Właściciel sklepu, Warszawa</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">„Potrzebowaliśmy niestandardowego systemu do zarządzania leadami na Laravel. Roman zaproponował eleganckie rozwiązanie i przez cały projekt był w stałym kontakcie. Efekt przeszedł nasze oczekiwania."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">AW</div>
+          <div>
+            <div class="author-name">Anna W.</div>
+            <div class="author-role">Manager, Agencja marketingowa</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-text">„Przejął projekt po poprzednim developerze i bardzo sprawnie odnalazł się w cudzym kodzie. Zoptymalizował stronę WordPress, która teraz ładuje się 3x szybciej. Zdecydowanie wrócimy z kolejnymi zleceniami."</div>
+        <div class="testimonial-author">
+          <div class="author-avatar">PT</div>
+          <div>
+            <div class="author-name">Piotr T.</div>
+            <div class="author-role">CEO, Firma usługowa, Kraków</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-row">
+      Więcej opinii na <a href="https://freelancehunt.com/freelancer/romas6ka.html#reviews" target="_blank" rel="noopener">Freelancehunt.com →</a>
+    </div>
+  </div>
+</section>
+
+<!-- JAK PRACUJĘ -->
+<section id="process">
+  <div class="container">
+    <div class="section-label">Proces współpracy</div>
+    <h2 class="section-title">Jak pracuję</h2>
+    <p class="section-sub">Przejrzysty i przewidywalny proces – od pierwszej rozmowy aż po wdrożenie i wsparcie po starcie projektu.</p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-circle">1</div>
+        <div class="step-title">Analiza potrzeb</div>
+        <div class="step-desc">Rozmawiamy o Twoim projekcie – celach, funkcjach, budżecie i harmonogramie. Pytam o szczegóły, żeby nic nie umknęło.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">2</div>
+        <div class="step-title">Propozycja i wycena</div>
+        <div class="step-desc">Dostajesz konkretną propozycję techniczną z wyceną i planem pracy. Bez ukrytych kosztów i niespodzianek w trakcie.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">3</div>
+        <div class="step-title">Realizacja projektu</div>
+        <div class="step-desc">Pracuję iteracyjnie i regularnie informuję o postępach. Kontakt przez Telegram, e-mail lub komunikator – jak wolisz.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">4</div>
+        <div class="step-title">Testy i wdrożenie</div>
+        <div class="step-desc">Przed startem testuję wszystkie funkcje i scenariusze. Wdrażam na serwer i dbam o płynne uruchomienie produkcji.</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">5</div>
+        <div class="step-title">Wsparcie po starcie</div>
+        <div class="step-desc">Po wdrożeniu jestem do dyspozycji. Poprawki, optymalizacja i dalszy rozwój – możemy współpracować długoterminowo.</div>
+      </div>
+    </div>
+    <div class="process-note">
+      💬 Komunikacja w projekcie możliwa po <strong>polsku</strong>, <strong>angielsku</strong> lub <strong>ukraińsku</strong> – jak Ci wygodniej.
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div>
+        <div class="section-label">Skontaktuj się</div>
+        <h2 class="section-title">Opowiedz mi o swoim projekcie</h2>
+        <p class="section-sub">Szukasz programisty do jednorazowego projektu lub długoterminowej współpracy? Napisz – chętnie porozmawiam o szczegółach.</p>
+
+        <div class="contact-channels">
+          <a href="https://t.me/RomanMatviy" class="channel" target="_blank" rel="noopener">
+            <div class="channel-icon channel-tg">💬</div>
+            <div>
+              <div class="channel-label">Telegram (preferowany)</div>
+              <div class="channel-value">@RomanMatviy</div>
+            </div>
+          </a>
+          <a href="mailto:roman@matviy.pp.ua" class="channel">
+            <div class="channel-icon channel-em">✉️</div>
+            <div>
+              <div class="channel-label">E-mail</div>
+              <div class="channel-value">roman@matviy.pp.ua</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/MatviyRoman" class="channel" target="_blank" rel="noopener">
+            <div class="channel-icon channel-li">💼</div>
+            <div>
+              <div class="channel-label">LinkedIn</div>
+              <div class="channel-value">linkedin.com/in/MatviyRoman</div>
+            </div>
+          </a>
+          <a href="https://github.com/MatviyRoman" class="channel" target="_blank" rel="noopener">
+            <div class="channel-icon channel-gh">🐙</div>
+            <div>
+              <div class="channel-label">GitHub – projekty i kod</div>
+              <div class="channel-value">github.com/MatviyRoman</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-cta-box">
+        <div class="cta-box-title">Zacznijmy współpracę</div>
+        <div class="cta-box-desc">Niezależnie od skali projektu – chętnie posłucham, co chcesz zbudować i powiem, jak mogę pomóc.</div>
+        <div class="cta-bullets">
+          <div class="cta-bullet">Szybka wycena – zazwyczaj do 24h</div>
+          <div class="cta-bullet">Elastyczny model współpracy (projekt / godziny)</div>
+          <div class="cta-bullet">Komunikacja po polsku, angielsku lub ukraińsku</div>
+          <div class="cta-bullet">Długoterminowe wsparcie po wdrożeniu</div>
+        </div>
+        <a href="https://t.me/RomanMatviy" class="btn btn-primary" style="width:100%;justify-content:center;" target="_blank" rel="noopener">
+          📩 Napisz na Telegramie
+        </a>
+        <a href="mailto:roman@matviy.pp.ua" class="btn btn-secondary" style="width:100%;justify-content:center;margin-top:0.75rem;">
+          ✉️ Wyślij e-mail
+        </a>
+        <div class="response-note">
+          <span>⚡ Odpowiadam zazwyczaj tego samego lub następnego dnia roboczego.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">dev<span>roman</span>.pl</div>
+    <div class="footer-copy">© 2025 Roman Matviy · Full-Stack Developer · Lwów, Ukraina</div>
+    <div class="footer-links">
+      <a href="https://t.me/RomanMatviy" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:roman@matviy.pp.ua">E-mail</a>
+      <a href="https://linkedin.com/in/MatviyRoman" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/MatviyRoman" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Smooth scroll for nav links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Intersection observer for section animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.highlight-card, .service-card, .project-card, .timeline-content, .testimonial-card, .process-step, .skill-group').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    observer.observe(el);
+  });
+
+  // Nav shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    nav.style.boxShadow = window.scrollY > 20 ? '0 4px 32px rgba(0,0,0,0.3)' : 'none';
+  });
+</script>
+</body>
+</html>
