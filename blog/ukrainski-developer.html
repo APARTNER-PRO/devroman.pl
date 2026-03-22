@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <script>
-  (function(){
-    try{ if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light'); }catch(e){}
-  })();
+  (function(){try{if(localStorage.getItem('theme')==='light')document.documentElement.classList.add('light');}catch(e){}}
+  )();
 </script>
 <head>
   <meta charset="UTF-8" />
@@ -21,39 +20,46 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0b0e13;--bg2:#111520;--bg3:#161b28;--surface:#1c2235;--border:#242c42;--accent:#3b82f6;--accent2:#60a5fa;--green:#34d399;--red:#f87171;--yellow:#f59e0b;--text:#e2e8f0;--muted:#8494b2;--heading:#ffffff}
-    /* ── LIGHT THEME ── */
-    html.light {
-      --bg:      #f8fafc;
-      --bg2:     #f1f5f9;
-      --bg3:     #e9eef6;
-      --surface: #dde6f5;
-      --border:  #c8d5e8;
-      --accent:  #2563eb;
-      --accent2: #1d4ed8;
-      --accent3: #3b82f6;
-      --green:   #059669;
-      --text:    #1e293b;
-      --muted:   #475569;
-      --heading: #0f172a;
-    }
-    *, *::before, *::after {
-      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-    }
-    html.light nav { background: rgba(248,250,252,0.95) !important; }
-
-    /* Theme toggle */
-    .theme-toggle {
-      width: 36px; height: 36px; border-radius: 8px;
-      border: 1px solid var(--border); background: var(--surface);
-      cursor: pointer; display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0; padding: 0; line-height: 1;
-      transition: border-color 0.2s, background 0.3s, transform 0.15s;
-    }
-    .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
-    .icon-moon { display: block; }
-    .icon-sun  { display: none; }
-    html.light .icon-moon { display: none; }
-    html.light .icon-sun  { display: block; }
+    html.light{--bg:#f8fafc;--bg2:#f1f5f9;--bg3:#e9eef6;--surface:#dde6f5;--border:#c8d5e8;--accent:#2563eb;--accent2:#1d4ed8;--accent3:#3b82f6;--green:#059669;--text:#1e293b;--muted:#475569;--heading:#0f172a;}
+    *,*::before,*::after{transition:background-color 0.3s ease,border-color 0.3s ease,color 0.3s ease;}
+    html.light nav{background:rgba(248,250,252,0.95)!important;}
+    .theme-toggle{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;padding:0;line-height:1;transition:border-color 0.2s,background 0.3s,transform 0.15s;}
+    .theme-toggle:hover{border-color:var(--accent);transform:scale(1.08);}
+    .icon-moon{display:block;}.icon-sun{display:none;}
+    html.light .icon-moon{display:none;}html.light .icon-sun{display:block;}
+    .blog-contact{background:var(--bg2);border-top:1px solid var(--border);padding:72px 0;}
+    .blog-contact-inner{max-width:780px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;}
+    .contact-left .clabel{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:.75rem;}
+    .contact-left .clabel::before{content:'//';opacity:.5;}
+    .contact-left h2{font-family:'Syne',sans-serif;font-size:1.55rem;font-weight:800;color:var(--heading);letter-spacing:-.3px;line-height:1.2;margin-bottom:.6rem;}
+    .contact-left p{color:var(--muted);font-size:.875rem;line-height:1.7;margin-bottom:1.25rem;font-weight:300;}
+    .cchannels{display:flex;flex-direction:column;gap:.65rem;}
+    .cchannel{display:flex;align-items:center;gap:.85rem;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:.8rem 1rem;text-decoration:none;transition:all .2s;}
+    .cchannel:hover{border-color:var(--accent);transform:translateX(3px);}
+    .cchannel-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+    .ci-tg{background:rgba(0,136,204,.15);}.ci-em{background:rgba(59,130,246,.12);}.ci-li{background:rgba(10,102,194,.15);}
+    .cchannel-label{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
+    .cchannel-value{color:var(--text);font-weight:500;font-size:.85rem;}
+    .contact-form-wrap{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:1.75rem;position:relative;overflow:hidden;}
+    .contact-form-wrap::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green));}
+    .form-title{font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;color:var(--heading);margin-bottom:.3rem;}
+    .form-sub{color:var(--muted);font-size:.8rem;margin-bottom:1.1rem;line-height:1.6;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;}
+    .form-group{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.6rem;}
+    .form-group label{font-size:.74rem;font-weight:600;color:var(--muted);letter-spacing:.03em;}
+    .form-group input,.form-group select,.form-group textarea{background:var(--surface);border:1px solid var(--border);border-radius:7px;padding:.6rem .85rem;color:var(--text);font-size:.875rem;font-family:'DM Sans',sans-serif;outline:none;width:100%;transition:border-color .2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--muted);opacity:.6;}
+    .form-group select option{background:var(--surface);color:var(--text);}
+    .form-group textarea{resize:vertical;min-height:90px;}
+    .form-submit{width:100%;padding:.75rem;border-radius:9px;background:var(--accent);color:#fff;font-size:.9rem;font-weight:700;font-family:'Syne',sans-serif;border:none;cursor:pointer;transition:all .2s;margin-top:.35rem;box-shadow:0 4px 14px rgba(59,130,246,.3);}
+    .form-submit:hover{background:#1d4ed8;transform:translateY(-1px);}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+    .fmsg{margin-top:.6rem;padding:.6rem .85rem;border-radius:7px;font-size:.8rem;text-align:center;display:none;}
+    .fmsg.ok{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:var(--green);}
+    .fmsg.err{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.3);color:#f87171;}
+    .form-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:.55rem;}
+    @media(max-width:680px){.blog-contact-inner{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}
     nav{background:rgba(11,14,19,.95);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
@@ -119,10 +125,10 @@
 <nav>
   <a href="../" class="nav-logo">dev<span>roman</span>.pl</a>
   <div style="display:flex;align-items:center;gap:1rem;">
-    <a href="../#blog" class="nav-back">← Powrót do bloga</a>
+    <a href="../#blog" class="nav-back">&larr; Powrót do bloga</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
-      <span class="icon-moon">🌙</span>
-      <span class="icon-sun">☀️</span>
+      <span class="icon-moon">&#127769;</span>
+      <span class="icon-sun">&#9728;</span>
     </button>
   </div>
 </nav>
@@ -270,20 +276,118 @@
   </div>
 </div>
 
+<div class="blog-contact">
+  <div class="blog-contact-inner">
+    <div class="contact-left">
+      <div class="clabel">Skontaktuj się</div>
+      <h2>Masz pytanie lub projekt?</h2>
+      <p>Odpiszę w ciągu 24 godzin. Możesz też napisać bezpośrednio przez Telegram lub e-mail.</p>
+      <div class="cchannels">
+        <a href="https://t.me/RomanMatviy" class="cchannel" target="_blank" rel="noopener">
+          <div class="cchannel-icon ci-tg">&#128172;</div>
+          <div><div class="cchannel-label">Telegram</div><div class="cchannel-value">@RomanMatviy</div></div>
+        </a>
+        <a href="mailto:roman@matviy.pp.ua" class="cchannel">
+          <div class="cchannel-icon ci-em">&#9993;</div>
+          <div><div class="cchannel-label">E-mail</div><div class="cchannel-value">roman@matviy.pp.ua</div></div>
+        </a>
+        <a href="https://linkedin.com/in/MatviyRoman" class="cchannel" target="_blank" rel="noopener">
+          <div class="cchannel-icon ci-li">&#128188;</div>
+          <div><div class="cchannel-label">LinkedIn</div><div class="cchannel-value">linkedin.com/in/MatviyRoman</div></div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-form-wrap">
+      <div class="form-title">Napisz o projekcie</div>
+      <div class="form-sub">Bezpłatna wycena w 24h. Bez zobowiązań.</div>
+      <form id="cform" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Imię i nazwisko</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Jan Kowalski" />
+          </div>
+          <div class="form-group">
+            <label for="cf-email">E-mail <span style="color:var(--accent2)">*</span></label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="jan@firma.pl" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="cf-type">Rodzaj projektu</label>
+          <select id="cf-type" name="project_type">
+            <option value="">&#8211; wybierz &#8211;</option>
+            <option>Sklep PrestaShop</option>
+            <option>Sklep WooCommerce</option>
+            <option>Strona WordPress</option>
+            <option>Aplikacja webowa Laravel</option>
+            <option>REST API / integracja</option>
+            <option>Utrzymanie / poprawki</option>
+            <option>Inne</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cf-msg">Opis projektu</label>
+          <textarea id="cf-msg" name="message" placeholder="Krótko opisz projekt – co chcesz zbudować, jaki masz budżet i termin..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">&#128233; Wyślij wiadomość</button>
+        <div class="fmsg ok" id="cf-ok" style="display:none">&#9989; Wiadomość wysłana! Odpiszę najdalej do jutra.</div>
+        <div class="fmsg err" id="cf-err" style="display:none">&#10060; Coś poszło nie tak. Napisz na roman@matviy.pp.ua</div>
+        <div class="form-note">&#128274; Dane nie są udostępniane osobom trzecim.</div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <footer>
   <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a href="https://t.me/RomanMatviy">Telegram</a> · <a href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a>
 </footer>
+
 <script>
-  (function(){
-    var btn = document.getElementById('themeToggle');
-    if(!btn) return;
-    btn.addEventListener('click', function(){
-      document.documentElement.classList.toggle('light');
-      try{ localStorage.setItem('theme',
-        document.documentElement.classList.contains('light') ? 'light' : 'dark');
-      }catch(e){}
+(function(){
+  // Web3Forms
+  var form=document.getElementById('cform');
+  if(form){
+    var btn=form.querySelector('button[type="submit"]');
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var email=form.querySelector('[name="email"]').value.trim();
+      if(!email){
+        var el=document.getElementById('cf-err');
+        el.textContent='Podaj adres e-mail.';el.style.display='block';return;
+      }
+      var fd=new FormData(form);
+      fd.append('access_key','d46e5b3b-1888-490f-873b-e9e54e719709');
+      var orig=btn.textContent;
+      btn.textContent='Wysyłam...';btn.disabled=true;
+      document.getElementById('cf-ok').style.display='none';
+      document.getElementById('cf-err').style.display='none';
+      try{
+        var r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+        var d=await r.json();
+        if(r.ok){
+          document.getElementById('cf-ok').style.display='block';
+          btn.textContent='Wysłano!';
+          setTimeout(function(){btn.textContent=orig;},3000);
+          form.reset();
+        }else{
+          var el=document.getElementById('cf-err');
+          el.textContent='Błąd: '+(d.message||'Spróbuj ponownie.');
+          el.style.display='block';btn.textContent=orig;btn.disabled=false;
+        }
+      }catch(err){
+        document.getElementById('cf-err').style.display='block';
+        btn.textContent=orig;btn.disabled=false;
+      }
     });
-  })();
+  }
+  // Theme toggle
+  var tbtn=document.getElementById('themeToggle');
+  if(tbtn){
+    tbtn.addEventListener('click',function(){
+      document.documentElement.classList.toggle('light');
+      try{localStorage.setItem('theme',document.documentElement.classList.contains('light')?'light':'dark');}catch(e){}
+    });
+  }
+})();
 </script>
 </body>
 </html>
