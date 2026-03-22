@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
+<script>
+  (function(){
+    try{ if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light'); }catch(e){}
+  })();
+</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1225,7 +1230,7 @@
         <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">
           📩 Napisz na Telegramie
         </a>
-        <a href="mailto:roman@matviy.pp.ua" class="btn btn-secondary">
+        <a href="/cdn-cgi/l/email-protection#b2c0dddfd3dcf2dfd3c6c4dbcb9cc2c29cc7d3" class="btn btn-secondary">
           ✉️ Wyślij e-mail
         </a>
       </div>
@@ -1871,11 +1876,11 @@
               <div class="channel-value">@RomanMatviy</div>
             </div>
           </a>
-          <a href="mailto:roman@matviy.pp.ua" class="channel">
+          <a href="/cdn-cgi/l/email-protection#2c5e43414d426c414d585a4555025c5c02594d" class="channel">
             <div class="channel-icon channel-em">✉️</div>
             <div>
               <div class="channel-label">E-mail</div>
-              <div class="channel-value">roman@matviy.pp.ua</div>
+              <div class="channel-value"><span class="__cf_email__" data-cfemail="c2b0adafa3ac82afa3b6b4abbbecb2b2ecb7a3">[email&#160;protected]</span></div>
             </div>
           </a>
           <a href="https://linkedin.com/in/MatviyRoman" class="channel" target="_blank" rel="noopener">
@@ -1940,7 +1945,7 @@
             📩 Wyślij wiadomość
           </button>
           <div class="form-msg" id="f-msg-ok" style="display:none">✅ Wiadomość wysłana! Odpiszę najdalej do jutra.</div>
-          <div class="form-msg error" id="f-msg-err" style="display:none">❌ Coś poszło nie tak. Napisz bezpośrednio na <a href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a></div>
+          <div class="form-msg error" id="f-msg-err" style="display:none">❌ Coś poszło nie tak. Napisz bezpośrednio na <a href="/cdn-cgi/l/email-protection#b0c2dfddd1def0ddd1c4c6d9c99ec0c09ec5d1"><span class="__cf_email__" data-cfemail="f5879a98949bb5989481839c8cdb8585db8094">[email&#160;protected]</span></a></div>
           <div class="form-note">🔒 Dane nie są udostępniane osobom trzecim.</div>
         </form>
       </div>
@@ -1955,14 +1960,14 @@
     <div class="footer-copy">© 2026 Roman Matviy · Full-Stack Developer · Lwów, Ukraina</div>
     <div class="footer-links">
       <a href="https://t.me/RomanMatviy" target="_blank" rel="noopener">Telegram</a>
-      <a href="mailto:roman@matviy.pp.ua">E-mail</a>
+      <a href="/cdn-cgi/l/email-protection#eb9984868a85ab868a9f9d8292c59b9bc59e8a">E-mail</a>
       <a href="https://linkedin.com/in/MatviyRoman" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://github.com/MatviyRoman" target="_blank" rel="noopener">GitHub</a>
     </div>
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // ── Web3Forms ──
   const form = document.getElementById('form');
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -2057,18 +2062,16 @@
   });
 
   // ── Theme toggle ──
-  const toggleBtn = document.getElementById('themeToggle');
-  const html = document.documentElement;
-
-  // Відновлюємо збережену тему
-  if (localStorage.getItem('theme') === 'light') {
-    html.classList.add('light');
-  }
-
-  toggleBtn.addEventListener('click', () => {
-    html.classList.toggle('light');
-    localStorage.setItem('theme', html.classList.contains('light') ? 'light' : 'dark');
-  });
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      document.documentElement.classList.toggle('light');
+      try{ localStorage.setItem('theme',
+        document.documentElement.classList.contains('light') ? 'light' : 'dark');
+      }catch(e){}
+    });
+  })();
 </script>
 </body>
 </html>

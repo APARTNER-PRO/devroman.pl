@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
+<script>
+  (function(){
+    try{ if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light'); }catch(e){}
+  })();
+</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -33,6 +38,7 @@
       --accent: #3b82f6; --accent2: #60a5fa; --accent3: #93c5fd;
       --green: #34d399; --text: #e2e8f0; --muted: #8494b2; --heading: #ffffff;
     }
+    /* ── LIGHT THEME ── */
     html.light {
       --bg:      #f8fafc;
       --bg2:     #f1f5f9;
@@ -50,25 +56,21 @@
     *, *::before, *::after {
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
-    /* Theme toggle button */
+    html.light nav { background: rgba(248,250,252,0.95) !important; }
+
+    /* Theme toggle */
     .theme-toggle {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-      transition: border-color 0.2s, background 0.2s, transform 0.15s;
-      padding: 0;
+      width: 36px; height: 36px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; padding: 0; line-height: 1;
+      transition: border-color 0.2s, background 0.3s, transform 0.15s;
     }
     .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
-    .theme-toggle .icon-moon { display: block; }
-    .theme-toggle .icon-sun  { display: none; }
-    html.light .theme-toggle .icon-moon { display: none; }
-    html.light .theme-toggle .icon-sun  { display: block; }
-    html.light nav { background: rgba(248,250,252,0.95); }
+    .icon-moon { display: block; }
+    .icon-sun  { display: none; }
+    html.light .icon-moon { display: none; }
+    html.light .icon-sun  { display: block; }
     html { scroll-behavior: smooth; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); font-size: 17px; line-height: 1.8; }
 
@@ -313,7 +315,7 @@
       <div class="cta-desc">Opisz mi swój projekt – rodzaj produktów, planowany asortyment, rynki sprzedaży i budżet. Odpiszę w ciągu 24 godzin z konkretną rekomendacją. Bezpłatnie.</div>
       <div class="btn-row">
         <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">💬 Napisz na Telegramie</a>
-        <a href="/cdn-cgi/l/email-protection#8af8e5e7ebe4cae7ebfefce3f3a4fafaa4ffeb" class="btn btn-secondary">✉️ <span class="__cf_email__" data-cfemail="6b1904060a052b060a1f1d0212451b1b451e0a">[email&#160;protected]</span></a>
+        <a href="mailto:roman@matviy.pp.ua" class="btn btn-secondary">✉️ roman@matviy.pp.ua</a>
       </div>
     </div>
 
@@ -329,4 +331,20 @@
 </div>
 
 <footer>
-  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a h
+  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a href="https://t.me/RomanMatviy">Telegram</a> · <a href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a>
+</footer>
+
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      document.documentElement.classList.toggle('light');
+      try{ localStorage.setItem('theme',
+        document.documentElement.classList.contains('light') ? 'light' : 'dark');
+      }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>

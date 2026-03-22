@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="pl">
+<script>
+  (function(){
+    try{ if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light'); }catch(e){}
+  })();
+</script>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -16,6 +21,7 @@
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{--bg:#0b0e13;--bg2:#111520;--bg3:#161b28;--surface:#1c2235;--border:#242c42;--accent:#3b82f6;--accent2:#60a5fa;--green:#34d399;--red:#f87171;--yellow:#f59e0b;--text:#e2e8f0;--muted:#8494b2;--heading:#ffffff}
+    /* ── LIGHT THEME ── */
     html.light {
       --bg:      #f8fafc;
       --bg2:     #f1f5f9;
@@ -33,25 +39,21 @@
     *, *::before, *::after {
       transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
-    /* Theme toggle button */
+    html.light nav { background: rgba(248,250,252,0.95) !important; }
+
+    /* Theme toggle */
     .theme-toggle {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0;
-      transition: border-color 0.2s, background 0.2s, transform 0.15s;
-      padding: 0;
+      width: 36px; height: 36px; border-radius: 8px;
+      border: 1px solid var(--border); background: var(--surface);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0; padding: 0; line-height: 1;
+      transition: border-color 0.2s, background 0.3s, transform 0.15s;
     }
     .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
-    .theme-toggle .icon-moon { display: block; }
-    .theme-toggle .icon-sun  { display: none; }
-    html.light .theme-toggle .icon-moon { display: none; }
-    html.light .theme-toggle .icon-sun  { display: block; }
-    html.light nav { background: rgba(248,250,252,0.95); }
+    .icon-moon { display: block; }
+    .icon-sun  { display: none; }
+    html.light .icon-moon { display: none; }
+    html.light .icon-sun  { display: block; }
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}
     nav{background:rgba(11,14,19,.95);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
@@ -260,7 +262,7 @@
       <div class="cta-desc">Opisz mi swój proces sprzedaży lub zarządzania klientami – powiem wprost, czy gotowy CRM wystarczy, czy warto budować własny. I ile by kosztował w Twoim przypadku.</div>
       <div class="btn-row">
         <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">💬 Napisz na Telegramie</a>
-        <a href="/cdn-cgi/l/email-protection#b6c4d9dbd7d8f6dbd7c2c0dfcf98c6c698c3d7" class="btn btn-secondary">✉️ <span class="__cf_email__" data-cfemail="d0a2bfbdb1be90bdb1a4a6b9a9fea0a0fea5b1">[email&#160;protected]</span></a>
+        <a href="mailto:roman@matviy.pp.ua" class="btn btn-secondary">✉️ roman@matviy.pp.ua</a>
       </div>
     </div>
 
@@ -276,4 +278,19 @@
 </div>
 
 <footer>
-  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a 
+  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a href="https://t.me/RomanMatviy">Telegram</a> · <a href="mailto:roman@matviy.pp.ua">roman@matviy.pp.ua</a>
+</footer>
+<script>
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      document.documentElement.classList.toggle('light');
+      try{ localStorage.setItem('theme',
+        document.documentElement.classList.contains('light') ? 'light' : 'dark');
+      }catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
