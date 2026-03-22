@@ -1,0 +1,52 @@
+{
+  "name": "devroman.pl – Roman Matviy Full-Stack Developer",
+  "short_name": "devroman.pl",
+  "description": "Freelance full-stack developer – Laravel, WordPress, PrestaShop. Tworzę sklepy, aplikacje webowe i strony dla firm z Polski i Europy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e13",
+  "theme_color": "#3b82f6",
+  "lang": "pl",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Usługi",
+      "short_name": "Usługi",
+      "description": "Zobacz ofertę usług",
+      "url": "/#services"
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "description": "Moje realizacje",
+      "url": "/#portfolio"
+    },
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Napisz do mnie",
+      "url": "/#contact"
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "description": "Artykuły o e-commerce i Laravel",
+      "url": "/#blog"
+    }
+  ]
+}
