@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REST API – co to jest i dlaczego Twój sklep go potrzebuje? | devroman.pl</title>
+  <meta name="description" content="REST API wyjaśnione prostym językiem dla właścicieli firm. Czym jest, jak działa i kiedy naprawdę go potrzebujesz – bez technicznego żargonu." />
+  <link rel="canonical" href="https://devroman.pl/blog/rest-api-co-to-jest/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="REST API – co to jest i dlaczego Twój sklep go potrzebuje?" />
+  <meta property="og:description" content="REST API wyjaśnione prostym językiem – bez technicznego żargonu. Dla właścicieli firm i sklepów." />
+  <meta property="og:url" content="https://devroman.pl/blog/rest-api-co-to-jest/" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"REST API – co to jest i dlaczego Twój sklep go potrzebuje?","author":{"@type":"Person","name":"Roman Matviy","url":"https://devroman.pl/"},"publisher":{"@type":"Organization","name":"devroman.pl","url":"https://devroman.pl/"},"datePublished":"2026-02-20","dateModified":"2026-02-20","mainEntityOfPage":"https://devroman.pl/blog/rest-api-co-to-jest/"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0b0e13;--bg2:#111520;--bg3:#161b28;--surface:#1c2235;--border:#242c42;--accent:#3b82f6;--accent2:#60a5fa;--green:#34d399;--red:#f87171;--yellow:#f59e0b;--text:#e2e8f0;--muted:#8494b2;--heading:#ffffff}
+    html.light {
+      --bg:      #f8fafc;
+      --bg2:     #f1f5f9;
+      --bg3:     #e9eef6;
+      --surface: #dde6f5;
+      --border:  #c8d5e8;
+      --accent:  #2563eb;
+      --accent2: #1d4ed8;
+      --accent3: #3b82f6;
+      --green:   #059669;
+      --text:    #1e293b;
+      --muted:   #475569;
+      --heading: #0f172a;
+    }
+    *, *::before, *::after {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      padding: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun  { display: none; }
+    html.light .theme-toggle .icon-moon { display: none; }
+    html.light .theme-toggle .icon-sun  { display: block; }
+    html.light nav { background: rgba(248,250,252,0.95); }
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.8}
+    nav{background:rgba(11,14,19,.95);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+    .nav-logo{font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--heading);text-decoration:none}
+    .nav-logo span{color:var(--accent)}
+    .nav-back{color:var(--muted);text-decoration:none;font-size:.875rem;transition:color .2s}
+    .nav-back:hover{color:var(--accent2)}
+    .post-hero{padding:64px 0 48px;border-bottom:1px solid var(--border);background:var(--bg2)}
+    .container{max-width:780px;margin:0 auto;padding:0 2rem}
+    .post-cat{display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.25);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+    .post-title{font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--heading);line-height:1.15;letter-spacing:-.5px;margin-bottom:20px}
+    .post-meta{display:flex;align-items:center;gap:1.5rem;color:var(--muted);font-size:.875rem;flex-wrap:wrap}
+    .post-body{padding:56px 0 80px}
+    .post-body p{color:var(--muted);margin-bottom:1.4rem;font-weight:300}
+    .post-body p strong{color:var(--text);font-weight:500}
+    .post-body h2{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--heading);margin:2.5rem 0 1rem;letter-spacing:-.3px}
+    .post-body h3{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--heading);margin:1.75rem 0 .75rem}
+    .post-body ul,.post-body ol{margin:1rem 0 1.4rem 1.5rem;color:var(--muted)}
+    .post-body li{margin-bottom:.5rem;font-weight:300}
+    .post-body li strong{color:var(--text);font-weight:500}
+    .callout{background:rgba(59,130,246,.07);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--text);font-size:.95rem}
+    .callout-green{border-left-color:var(--green);background:rgba(52,211,153,.06)}
+    .analogy-box{background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.75rem;margin:1.5rem 0;position:relative}
+    .analogy-box::before{content:'💡 Analogia';position:absolute;top:-11px;left:20px;background:var(--bg3);padding:0 8px;font-size:.75rem;font-weight:700;color:var(--accent2);letter-spacing:.05em}
+    .analogy-box p{color:var(--text);font-weight:300;margin-bottom:0}
+    .use-cases{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+    .use-case{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
+    .use-case-icon{font-size:1.5rem;margin-bottom:.5rem}
+    .use-case-title{font-family:'Syne',sans-serif;font-weight:700;color:var(--heading);font-size:.9rem;margin-bottom:.4rem}
+    .use-case-desc{color:var(--muted);font-size:.82rem;line-height:1.6;font-weight:300}
+    .flow{display:flex;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.25rem 1.5rem;margin:1.5rem 0;flex-wrap:wrap}
+    .flow-step{background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:.5rem 1rem;font-size:.82rem;color:var(--text);font-weight:500;text-align:center}
+    .flow-arrow{color:var(--accent2);font-size:1.1rem;flex-shrink:0}
+    .cta-box{background:linear-gradient(135deg,var(--surface),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-top:3rem;position:relative;overflow:hidden}
+    .cta-box::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green))}
+    .cta-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--heading);margin-bottom:.75rem}
+    .cta-desc{color:var(--muted);font-size:.925rem;margin-bottom:1.5rem;line-height:1.7}
+    .btn-row{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:.4rem;padding:.75rem 1.5rem;border-radius:10px;font-weight:600;font-size:.9rem;text-decoration:none;transition:all .2s;font-family:'DM Sans',sans-serif}
+    .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(59,130,246,.3)}
+    .btn-primary:hover{background:#2563eb}
+    .btn-secondary{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
+    .btn-secondary:hover{border-color:var(--accent);color:var(--accent2)}
+    .author-box{display:flex;align-items:center;gap:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:2.5rem}
+    .author-ava{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:1.1rem;flex-shrink:0}
+    .author-name{font-family:'Syne',sans-serif;font-weight:700;color:var(--heading);margin-bottom:2px}
+    .author-desc{color:var(--muted);font-size:.85rem}
+    footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:.8rem}
+    footer a{color:var(--accent2);text-decoration:none}
+    @media(max-width:600px){.use-cases{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="../" class="nav-logo">dev<span>roman</span>.pl</a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="../#blog" class="nav-back">← Powrót do bloga</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+      <span class="icon-moon">🌙</span>
+      <span class="icon-sun">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="container">
+    <div class="post-cat">⚙️ Backend · Technologie</div>
+    <h1 class="post-title">REST API – co to jest i dlaczego Twój sklep go potrzebuje?</h1>
+    <div class="post-meta">
+      <span>✍️ Roman Matviy</span>
+      <span>📅 20 lutego 2026</span>
+      <span>⏱ 7 min czytania</span>
+      <span>🏷 API, Laravel, integracje</span>
+    </div>
+  </div>
+</div>
+
+<div class="post-body">
+  <div class="container">
+
+    <p>„Potrzebujemy API" – to zdanie słyszę coraz częściej od klientów, którzy niekoniecznie wiedzą, co dokładnie oznacza, ale czują, że ich sklep lub aplikacja potrzebuje czegoś więcej niż to, co oferuje gotowy panel administracyjny.</p>
+
+    <p>W tym artykule wyjaśniam czym jest REST API <strong>prostym, biznesowym językiem</strong> – bez żargonu technicznego. I co ważniejsze – kiedy naprawdę go potrzebujesz, a kiedy jest to niepotrzebna komplikacja.</p>
+
+    <h2>Czym jest API? Analogia z kelnerem</h2>
+
+    <div class="analogy-box">
+      <p>Wyobraź sobie restaurację. <strong>Ty</strong> (klient) siedzisz przy stoliku. <strong>Kuchnia</strong> (serwer, baza danych) przygotowuje jedzenie. Ale nie możesz wejść do kuchni i samemu wziąć sobie potrawy – do tego służy <strong>kelner</strong>.</p>
+      <br>
+      <p>Kelner przyjmuje Twoje zamówienie, zanosi je do kuchni, a potem przynosi gotowe danie. <strong>API to właśnie ten kelner</strong> – pośrednik, który przekazuje żądania między aplikacją a serwerem i zwraca odpowiedź.</p>
+    </div>
+
+    <p>„REST" to po prostu zestaw reguł określających, jak ten kelner ma się zachowywać – jakim językiem mówi, jak formatuje zamówienia i odpowiedzi. REST API komunikuje się przez internet, używając tych samych protokołów co zwykłe strony WWW.</p>
+
+    <h2>Jak to wygląda w praktyce?</h2>
+
+    <p>Kiedy klikasz „Dodaj do koszyka" w sklepie internetowym, za kulisami dzieje się coś takiego:</p>
+
+    <div class="flow">
+      <div class="flow-step">Twoja przeglądarka</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Wysyła żądanie do API<br><small style="color:var(--muted)">„Dodaj produkt #42, ilość: 1"</small></div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">API sprawdza i przetwarza</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Odpowiedź: „OK, koszyk zaktualizowany"</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">Widisz nową zawartość koszyka</div>
+    </div>
+
+    <p>To samo dzieje się przy każdej płatności, rejestracji konta, sprawdzeniu stanu zamówienia czy pobieraniu danych przez aplikację mobilną.</p>
+
+    <h2>Kiedy Twój biznes potrzebuje REST API?</h2>
+
+    <div class="use-cases">
+      <div class="use-case">
+        <div class="use-case-icon">📱</div>
+        <div class="use-case-title">Aplikacja mobilna do sklepu</div>
+        <div class="use-case-desc">Chcesz mieć aplikację iOS/Android, która wyświetla produkty, przyjmuje zamówienia i pozwala śledzić dostawę. Aplikacja mobilna komunikuje się ze sklepem właśnie przez API.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">🔗</div>
+        <div class="use-case-title">Integracja z systemem ERP lub WMS</div>
+        <div class="use-case-desc">Twój sklep musi automatycznie synchronizować zamówienia z systemem magazynowym lub księgowym. API to jedyny sensowny sposób na taką automatyzację.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">🤝</div>
+        <div class="use-case-title">Integracja z zewnętrznymi platformami</div>
+        <div class="use-case-desc">Allegro, Ceneo, Google Shopping, porównywarki cen – każda z tych platform pobiera dane z Twojego sklepu przez API lub wymaga od Ciebie obsługi ich API.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">⚡</div>
+        <div class="use-case-title">Wiele front-endów, jeden backend</div>
+        <div class="use-case-desc">Masz sklep na www, aplikację mobilną i kiosk w sklepie stacjonarnym. Zamiast trzech osobnych systemów – jedno API zarządza danymi dla wszystkich.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">📦</div>
+        <div class="use-case-title">Automatyzacja procesów</div>
+        <div class="use-case-desc">Automatyczne generowanie faktur, wysyłanie powiadomień SMS po złożeniu zamówienia, aktualizacja stanów magazynowych z hurtowni – wszystko przez API.</div>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">🛠</div>
+        <div class="use-case-title">Headless e-commerce</div>
+        <div class="use-case-desc">Nowoczesna architektura: backend (PrestaShop/WooCommerce) dostarcza dane przez API, a front-end zbudowany w React/Vue jest szybki jak aplikacja natywna.</div>
+      </div>
+    </div>
+
+    <h2>Kiedy API jest niepotrzebne?</h2>
+
+    <p>Nie każdy sklep potrzebuje własnego REST API. Jeśli Twój sklep:</p>
+
+    <ul>
+      <li>Działa jako standardowy sklep bez integracji z zewnętrznymi systemami</li>
+      <li>Nie ma aplikacji mobilnej ani dodatkowych front-endów</li>
+      <li>Obsługuje zamówienia ręcznie przez panel administracyjny</li>
+    </ul>
+
+    <p>— to wtedy gotowe rozwiązania jak PrestaShop czy WooCommerce mają już wbudowane mechanizmy, które wystarczą. Nie musisz budować własnego API.</p>
+
+    <div class="callout">
+      <strong>Zasada kciuka:</strong> API potrzebujesz wtedy, gdy chcesz, żeby dwa lub więcej systemów automatycznie wymieniało dane bez ręcznej interwencji człowieka.
+    </div>
+
+    <h2>REST API a PrestaShop i WordPress – co jest wbudowane?</h2>
+
+    <p><strong>PrestaShop</strong> posiada wbudowane REST API dostępne z panelu administracyjnego. Obsługuje produkty, zamówienia, klientów i stany magazynowe. Jest przyzwoite na potrzeby podstawowych integracji, ale przy bardziej złożonych wymaganiach (własna logika biznesowa, autoryzacja JWT, niestandardowe endpointy) trzeba je rozbudować.</p>
+
+    <p><strong>WordPress / WooCommerce</strong> ma WP REST API – dobrze udokumentowane i rozszerzalne przez wtyczki. Dla standardowych integracji w zupełności wystarczy.</p>
+
+    <p>Gdy potrzeby wykraczają poza te możliwości – buduję <strong>dedykowane REST API na Laravel</strong>, które obsługuje dokładnie te operacje, których potrzebuje klient, z odpowiednim poziomem bezpieczeństwa i wydajności.</p>
+
+    <div class="callout callout-green">
+      <strong>Przykład z projektu:</strong> system dla sieci salonów samochodowych – API przyjmowało leady z 4 różnych źródeł (formularz na stronie, Otomoto, OLX, Facebook Lead Ads), normalizowało dane i rozdzielało do odpowiednich handlowców. ~200 leadów dziennie, zero ręcznej pracy. Zbudowane na Laravel, czas odpowiedzi API poniżej 80ms.
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-title">Potrzebujesz integracji lub własnego API?</div>
+      <div class="cta-desc">Opisz mi problem – co chcesz połączyć, jakie systemy masz i jaki efekt chcesz osiągnąć. Zaproponuję rozwiązanie i wycenę. Bezpłatna konsultacja.</div>
+      <div class="btn-row">
+        <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">💬 Napisz na Telegramie</a>
+        <a href="/cdn-cgi/l/email-protection#75071a18141b35181401031c0c5b05055b0014" class="btn btn-secondary">✉️ <span class="__cf_email__" data-cfemail="24564b49454a64494550524d5d0a54540a5145">[email&#160;protected]</span></a>
+      </div>
+    </div>
+
+    <div class="author-box">
+      <div class="author-ava">RM</div>
+      <div>
+        <div class="author-name">Roman Matviy</div>
+        <div class="author-desc">Full-stack developer. Buduję REST API na Laravel dla sklepów i aplikacji biznesowych. Pracuję z klientami z Polski i Europy. <a href="../" style="color:var(--accent2)">→ devroman.pl</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a 

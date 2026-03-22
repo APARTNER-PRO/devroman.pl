@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laravel vs WordPress – co wybrać dla firmy w 2026? | devroman.pl</title>
+  <meta name="description" content="Laravel czy WordPress? Kiedy używać gotowego CMS-a, a kiedy budować własną aplikację od zera. Porównanie z perspektywy programisty z 7-letnim doświadczeniem." />
+  <link rel="canonical" href="https://devroman.pl/blog/laravel-vs-wordpress/" />
+  <meta property="og:title" content="Laravel vs WordPress – co wybrać dla firmy w 2026?" />
+  <meta property="og:description" content="Laravel czy WordPress? Konkretne przypadki użycia, porównanie kosztów i czas realizacji – bez technicznego żargonu." />
+  <meta property="og:url" content="https://devroman.pl/blog/laravel-vs-wordpress/" />
+  <meta property="og:type" content="article" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Laravel vs WordPress – co wybrać dla firmy w 2026?",
+    "author": { "@type": "Person", "name": "Roman Matviy", "url": "https://devroman.pl/" },
+    "publisher": { "@type": "Organization", "name": "devroman.pl", "url": "https://devroman.pl/" },
+    "datePublished": "2025-12-08",
+    "dateModified": "2025-12-08",
+    "mainEntityOfPage": "https://devroman.pl/blog/laravel-vs-wordpress/"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing:border-box;margin:0;padding:0; }
+    :root { --bg:#0b0e13;--bg2:#111520;--bg3:#161b28;--surface:#1c2235;--border:#242c42;--accent:#3b82f6;--accent2:#60a5fa;--green:#34d399;--text:#e2e8f0;--muted:#8494b2;--heading:#ffffff; }
+    html.light {
+      --bg:      #f8fafc;
+      --bg2:     #f1f5f9;
+      --bg3:     #e9eef6;
+      --surface: #dde6f5;
+      --border:  #c8d5e8;
+      --accent:  #2563eb;
+      --accent2: #1d4ed8;
+      --accent3: #3b82f6;
+      --green:   #059669;
+      --text:    #1e293b;
+      --muted:   #475569;
+      --heading: #0f172a;
+    }
+    *, *::before, *::after {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      padding: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun  { display: none; }
+    html.light .theme-toggle .icon-moon { display: none; }
+    html.light .theme-toggle .icon-sun  { display: block; }
+    html.light nav { background: rgba(248,250,252,0.95); }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.8; }
+    nav { background:rgba(11,14,19,0.95);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--heading);text-decoration:none; }
+    .nav-logo span { color:var(--accent); }
+    .nav-back { color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s; }
+    .nav-back:hover { color:var(--accent2); }
+    .post-hero { padding:64px 0 48px;border-bottom:1px solid var(--border);background:var(--bg2); }
+    .container { max-width:780px;margin:0 auto;padding:0 2rem; }
+    .post-cat { display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:20px; }
+    .post-title { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--heading);line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px; }
+    .post-meta { display:flex;align-items:center;gap:1.5rem;color:var(--muted);font-size:0.875rem;flex-wrap:wrap; }
+    .post-body { padding:56px 0 80px; }
+    .post-body p { color:var(--muted);margin-bottom:1.4rem;font-weight:300; }
+    .post-body p strong { color:var(--text);font-weight:500; }
+    .post-body h2 { font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--heading);margin:2.5rem 0 1rem;letter-spacing:-0.3px; }
+    .post-body h3 { font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--heading);margin:1.75rem 0 0.75rem; }
+    .post-body ul,.post-body ol { margin:1rem 0 1.4rem 1.5rem;color:var(--muted); }
+    .post-body li { margin-bottom:0.5rem;font-weight:300; }
+    .post-body li strong { color:var(--text);font-weight:500; }
+    .callout { background:rgba(59,130,246,0.07);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--text);font-size:0.95rem; }
+    .callout-green { border-left-color:var(--green);background:rgba(52,211,153,0.06); }
+    .callout-yellow { border-left-color:#f59e0b;background:rgba(245,158,11,0.06); }
+    .table-wrap { overflow-x:auto;margin:1.75rem 0;border-radius:12px;border:1px solid var(--border); }
+    table { width:100%;border-collapse:collapse;font-size:0.9rem; }
+    thead { background:var(--surface); }
+    thead th { padding:14px 18px;text-align:left;font-family:'Syne',sans-serif;font-weight:700;font-size:0.85rem;color:var(--heading);border-bottom:1px solid var(--border); }
+    tbody td { padding:13px 18px;border-bottom:1px solid rgba(36,44,66,0.6);color:var(--muted);vertical-align:top;line-height:1.6; }
+    tbody tr:last-child td { border-bottom:none; }
+    tbody tr:hover td { background:rgba(59,130,246,0.03); }
+    .td-label { color:var(--text);font-weight:500; }
+    .yes { color:var(--green);font-weight:600; }
+    .no { color:#f87171;font-weight:600; }
+    .mid { color:#f59e0b;font-weight:600; }
+    .vs-grid { display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:1.5rem 0; }
+    .vs-card { background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.5rem; }
+    .vs-card.wp { border-top:3px solid #3b82f6; }
+    .vs-card.laravel { border-top:3px solid var(--green); }
+    .vs-card-title { font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--heading);margin-bottom:1rem; }
+    .vs-list { list-style:none;padding:0; }
+    .vs-list li { font-size:0.875rem;color:var(--muted);padding:5px 0;border-bottom:1px solid rgba(36,44,66,0.4);display:flex;align-items:flex-start;gap:8px;font-weight:300; }
+    .vs-list li:last-child { border-bottom:none; }
+    .vs-list li::before { content:'✓';color:var(--green);font-weight:700;flex-shrink:0; }
+    .cta-box { background:linear-gradient(135deg,var(--surface),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-top:3rem;position:relative;overflow:hidden; }
+    .cta-box::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green)); }
+    .cta-title { font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--heading);margin-bottom:0.75rem; }
+    .cta-desc { color:var(--muted);font-size:0.925rem;margin-bottom:1.5rem;line-height:1.7; }
+    .btn-row { display:flex;gap:1rem;flex-wrap:wrap; }
+    .btn { display:inline-flex;align-items:center;gap:0.4rem;padding:0.75rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:all 0.2s;font-family:'DM Sans',sans-serif; }
+    .btn-primary { background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(59,130,246,0.3); }
+    .btn-primary:hover { background:#2563eb; }
+    .btn-secondary { background:var(--bg3);color:var(--text);border:1px solid var(--border); }
+    .btn-secondary:hover { border-color:var(--accent);color:var(--accent2); }
+    .author-box { display:flex;align-items:center;gap:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:2.5rem; }
+    .author-ava { width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:1.1rem;flex-shrink:0; }
+    .author-name { font-family:'Syne',sans-serif;font-weight:700;color:var(--heading);margin-bottom:2px; }
+    .author-desc { color:var(--muted);font-size:0.85rem; }
+    footer { background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.8rem; }
+    footer a { color:var(--accent2);text-decoration:none; }
+    @media(max-width:600px){.vs-grid{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo">dev<span>roman</span>.pl</a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="../#blog" class="nav-back">← Powrót do bloga</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+      <span class="icon-moon">🌙</span>
+      <span class="icon-sun">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="container">
+    <div class="post-cat">Backend · Technologie</div>
+    <h1 class="post-title">Laravel vs WordPress – co wybrać dla firmy w 2026?</h1>
+    <div class="post-meta">
+      <span>✍️ Roman Matviy</span>
+      <span>📅 8 grudnia 2025</span>
+      <span>⏱ 7 min czytania</span>
+    </div>
+  </div>
+</div>
+
+<div class="post-body">
+  <div class="container">
+
+    <p>„Zbuduj nam to na WordPressie" albo „potrzebujemy czegoś niestandardowego, może Laravel?" – te dwa zdania słyszę od klientów najczęściej. I za każdym razem moja odpowiedź brzmi: <strong>to zależy</strong>. Ale zależy od konkretnych rzeczy, które można jasno opisać.</p>
+
+    <p>W tym artykule wyjaśniam – bez technicznego żargonu – kiedy WordPress jest doskonałym wyborem, a kiedy naprawdę potrzebujesz dedykowanej aplikacji opartej na Laravel. Różnica w kosztach i czasie realizacji jest znacząca, więc warto podjąć tę decyzję świadomie.</p>
+
+    <div class="callout">
+      <strong>Ważne na wstępie:</strong> WordPress i Laravel to nie konkurenci – to narzędzia do różnych zadań. Pytanie nie brzmi „które jest lepsze", lecz „które jest odpowiednie dla Twojego projektu".
+    </div>
+
+    <h2>Czym jest WordPress, a czym Laravel?</h2>
+
+    <p><strong>WordPress</strong> to gotowy system zarządzania treścią (CMS). Instalujesz go, wybierasz motyw i wtyczki, uzupełniasz treści – i strona działa. Nie musisz pisać kodu, żeby uruchomić podstawową stronę firmową czy blog. To jego siła i jednocześnie jego ograniczenie.</p>
+
+    <p><strong>Laravel</strong> to framework PHP – narzędzie dla programistów do budowania aplikacji webowych od zera. Nie ma gotowego panelu ani motywów. Jest za to pełna kontrola nad każdym aspektem aplikacji: bazą danych, logiką biznesową, API, bezpieczeństwem. To wymaga więcej czasu i kosztuje więcej – ale daje możliwości, których WordPress nigdy nie osiągnie.</p>
+
+    <h2>Szybkie porównanie</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Kryterium</th><th>WordPress</th><th>Laravel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-label">Czas do uruchomienia MVP</td><td><span class="yes">Szybki</span> – dni lub tygodnie</td><td><span class="mid">Dłuższy</span> – tygodnie lub miesiące</td></tr>
+          <tr><td class="td-label">Koszt wdrożenia</td><td><span class="yes">Niższy</span> – gotowe komponenty</td><td><span class="mid">Wyższy</span> – wszystko budowane od zera</td></tr>
+          <tr><td class="td-label">Elastyczność i personalizacja</td><td><span class="mid">Ograniczona</span> – ramy WP</td><td><span class="yes">Pełna</span> – dowolna logika</td></tr>
+          <tr><td class="td-label">Zarządzanie treścią przez klienta</td><td><span class="yes">Bardzo proste</span></td><td>Wymaga budowy własnego panelu</td></tr>
+          <tr><td class="td-label">Wydajność przy dużym ruchu</td><td><span class="mid">Wymaga optymalizacji</span></td><td><span class="yes">Bardzo dobra</span> przy dobrej architekturze</td></tr>
+          <tr><td class="td-label">Bezpieczeństwo</td><td><span class="mid">Podatne na ataki</span> przez wtyczki</td><td><span class="yes">Wysokie</span> – pełna kontrola kodu</td></tr>
+          <tr><td class="td-label">Integracje z zewnętrznymi systemami</td><td><span class="mid">Przez wtyczki</span> (ograniczenia)</td><td><span class="yes">Dowolne</span> REST API, webhooks</td></tr>
+          <tr><td class="td-label">Skalowalność</td><td><span class="mid">Ograniczona</span></td><td><span class="yes">Wysoka</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Kiedy wybrać WordPress</h2>
+
+    <div class="vs-grid">
+      <div class="vs-card wp">
+        <div class="vs-card-title">✅ WordPress jest właściwym wyborem, gdy:</div>
+        <ul class="vs-list">
+          <li>Potrzebujesz strony firmowej, landing page lub bloga</li>
+          <li>Chcesz samodzielnie aktualizować treści bez pomocy programisty</li>
+          <li>Budżet jest ograniczony i zależy Ci na szybkim starcie</li>
+          <li>Sklep internetowy (WooCommerce) z typowym asortymentem</li>
+          <li>SEO i content marketing są kluczowym kanałem pozyskiwania klientów</li>
+          <li>Twój projekt mieści się w możliwościach dostępnych wtyczek</li>
+        </ul>
+      </div>
+      <div class="vs-card laravel">
+        <div class="vs-card-title">✅ Laravel jest właściwym wyborem, gdy:</div>
+        <ul class="vs-list">
+          <li>Budujesz system z niestandardową logiką biznesową (CRM, ERP, platforma)</li>
+          <li>Potrzebujesz REST API dla aplikacji mobilnej lub innego systemu</li>
+          <li>Masz złożone role użytkowników i uprawnienia</li>
+          <li>Integrujesz z wieloma zewnętrznymi systemami przez API</li>
+          <li>Zależy Ci na bezpieczeństwie i pełnej kontroli nad kodem</li>
+          <li>Planujesz skalowanie – tysiące użytkowników równocześnie</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Przykłady z moich projektów</h2>
+
+    <h3>Projekt na WordPress – dobry wybór</h3>
+    <p>Klient prowadzi sieć hosteli w zachodniej Ukrainie i potrzebował strony z opisem obiektów, galerią, systemem rezerwacji i blogiem. <strong>WordPress z ACF i motywem na zamówienie</strong> – projekt gotowy w 4 tygodnie, klient samodzielnie dodaje wpisy i aktualizuje ceny. Działa od 3 lat.</p>
+
+    <h3>Projekt na Laravel – gdzie WP by nie wystarczył</h3>
+    <p>Firma z branży sprzedaży samochodów potrzebowała systemu do zarządzania leadami: zbieranie zapytań z kilku źródeł (formularze, API z portalów ogłoszeniowych), przypisywanie do handlowców, śledzenie statusów, raporty i alerty mailowe. <strong>WordPress z wtyczkami nie da rady</strong> – zbudowałem to na Laravel z Vue.js. System obsługuje kilkaset leadów miesięcznie bez żadnej interwencji technicznej.</p>
+
+    <h2>A co z kosztami? Realne porównanie</h2>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Typ projektu</th><th>WordPress</th><th>Laravel</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="td-label">Strona firmowa / landing page</td><td>2 000 – 8 000 zł</td><td>Nie ma sensu – WP wystarczy</td></tr>
+          <tr><td class="td-label">Blog z CMS dla redakcji</td><td>3 000 – 10 000 zł</td><td>12 000 – 30 000 zł+</td></tr>
+          <tr><td class="td-label">Panel CRM / zarządzanie danymi</td><td>Nie zalecane</td><td>8 000 – 25 000 zł</td></tr>
+          <tr><td class="td-label">REST API dla aplikacji</td><td>Możliwe, ale ograniczone</td><td>6 000 – 20 000 zł</td></tr>
+          <tr><td class="td-label">Platforma SaaS / marketplace</td><td>Nie zalecane</td><td>30 000 zł+</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout callout-yellow">
+      <strong>Typowy błąd:</strong> klient chce zbudować złożony system CRM na WordPress, bo „WordPress jest tani". Efekt: 6 miesięcy walki z wtyczkami, hackowanie rozwiązań, które nie były do tego zaprojektowane, i w końcu przepisanie na Laravel – które i tak kosztuje więcej niż gdyby od razu zacząć dobrze.
+    </div>
+
+    <h2>Nie musisz decydować sam</h2>
+
+    <p>Jeśli masz projekt i nie wiesz, które rozwiązanie jest właściwe – opisz mi go. Powiem wprost, czy WordPress wystarczy, czy potrzebujesz czegoś więcej. Bez technicznego żargonu, z szacunkowym budżetem i czasem realizacji.</p>
+
+    <div class="callout callout-green">
+      <strong>Zasada, którą stosuję:</strong> zawsze wybieram prostsze narzędzie, które spełni wymagania projektu. Nie buduj rakiety, jeśli potrzebujesz roweru. Ale nie wsiadaj na rower, jeśli masz do przejechania 500 km.
+    </div>
+
+    <div class="cta-box">
+      <div class="cta-title">Masz projekt i nie wiesz od czego zacząć?</div>
+      <div class="cta-desc">Opisz mi w kilku zdaniach, co chcesz zbudować – cel, użytkownicy, funkcje. Odpiszę z rekomendacją technologii i orientacyjną wyceną. Bezpłatnie, bez zobowiązań.</div>
+      <div class="btn-row">
+        <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">💬 Napisz na Telegramie</a>
+        <a href="/cdn-cgi/l/email-protection#24564b49454a64494550524d5d0a54540a5145" class="btn btn-secondary">✉️ <span class="__cf_email__" data-cfemail="3644595b5758765b5742405f4f184646184357">[email&#160;protected]</span></a>
+      </div>
+    </div>
+
+    <div class="author-box">
+      <div class="author-ava">RM</div>
+      <div>
+        <div class="author-name">Roman Matviy</div>
+        <div class="author-desc">Full-stack developer. Pracuję na Laravel i WordPress od ponad 7 lat. Pomagam firmom wybrać właściwą technologię i budować rzeczy, które działają. <a href="../" style="color:var(--accent2)">→ devroman.pl</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a 

@@ -1,0 +1,27 @@
+# robots.txt – devroman.pl
+# https://www.robotstxt.org/
+
+# Zezwól wszystkim robotom na indeksowanie całej strony
+User-agent: *
+Allow: /
+
+# Blokuj dostęp do ewentualnych plików administracyjnych (na przyszłość)
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /.env
+Disallow: /storage/
+Disallow: /vendor/
+
+# Sitemap – Google i Bing pobiorą ją automatycznie
+Sitemap: https://devroman.pl/sitemap.xml
+
+# Crawl-delay dla mniej ważnych botów (opcjonalne)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Disallow: /

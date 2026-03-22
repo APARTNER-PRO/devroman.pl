@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1200" />
+  <title>OG Image – devroman.pl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0b0e13;
+      font-family: 'DM Sans', sans-serif;
+      position: relative;
+    }
+
+    /* ── BACKGROUND GRID ── */
+    .grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(59,130,246,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59,130,246,0.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+
+    /* ── GLOW BLOBS ── */
+    .glow-blue {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 65%);
+      top: -150px;
+      right: -100px;
+      pointer-events: none;
+    }
+    .glow-green {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(52,211,153,0.12) 0%, transparent 65%);
+      bottom: -80px;
+      left: 80px;
+      pointer-events: none;
+    }
+
+    /* ── TOP BORDER ── */
+    .top-bar {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #34d399, #3b82f6);
+    }
+
+    /* ── MAIN CONTENT ── */
+    .content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      height: 100%;
+      align-items: center;
+      padding: 0 80px;
+      gap: 60px;
+    }
+
+    /* LEFT */
+    .left { flex: 1; }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #60a5fa;
+      margin-bottom: 24px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+    }
+
+    .headline {
+      font-family: 'Syne', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 20px;
+    }
+    .headline .grad {
+      background: linear-gradient(90deg, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .sub {
+      font-size: 17px;
+      color: #8494b2;
+      line-height: 1.6;
+      font-weight: 300;
+      max-width: 520px;
+      margin-bottom: 32px;
+    }
+    .sub strong { color: #c7d5f0; font-weight: 500; }
+
+    .pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      background: rgba(28,34,53,0.9);
+      border: 1px solid #242c42;
+      color: #93c5fd;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 8px;
+    }
+
+    /* RIGHT CARD */
+    .card {
+      width: 300px;
+      background: #1c2235;
+      border: 1px solid #242c42;
+      border-radius: 20px;
+      padding: 32px 28px;
+      position: relative;
+      flex-shrink: 0;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #34d399);
+      border-radius: 20px 20px 0 0;
+    }
+
+    .avatar {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6, #7c3aed);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+
+    .card-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+    .card-role { color: #8494b2; font-size: 12px; margin-bottom: 20px; }
+
+    .stats { display: flex; gap: 16px; margin-bottom: 20px; }
+    .stat-n {
+      font-family: 'Syne', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .stat-n span { color: #60a5fa; }
+    .stat-l { font-size: 10px; color: #8494b2; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+    .avail {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(52,211,153,0.08);
+      border: 1px solid rgba(52,211,153,0.2);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 12px;
+      color: #34d399;
+    }
+    .avail-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #34d399;
+    }
+
+    /* DOMAIN WATERMARK */
+    .domain {
+      position: absolute;
+      bottom: 28px;
+      left: 80px;
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #3b4563;
+    }
+    .domain span { color: #3b82f6; }
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow-blue"></div>
+  <div class="glow-green"></div>
+  <div class="top-bar"></div>
+
+  <div class="content">
+    <div class="left">
+      <div class="badge">
+        <div class="badge-dot"></div>
+        Dostępny dla nowych projektów
+      </div>
+      <div class="headline">
+        Full-stack developer<br>
+        <span class="grad">Laravel · WordPress<br>PrestaShop</span>
+      </div>
+      <div class="sub">
+        <strong>7+ lat doświadczenia</strong> komercyjnego. Tworzę sklepy, aplikacje webowe i systemy backendowe dla firm z <strong>Polski i Europy</strong>.
+      </div>
+      <div class="pills">
+        <span class="pill">Laravel</span>
+        <span class="pill">PHP</span>
+        <span class="pill">PrestaShop</span>
+        <span class="pill">WordPress</span>
+        <span class="pill">Vue.js</span>
+        <span class="pill">REST API</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="avatar">RM</div>
+      <div class="card-name">Roman Matviy</div>
+      <div class="card-role">Full-Stack Developer · Lwów, Ukraina</div>
+      <div class="stats">
+        <div>
+          <div class="stat-n">7<span>+</span></div>
+          <div class="stat-l">Lat exp.</div>
+        </div>
+        <div>
+          <div class="stat-n">50<span>+</span></div>
+          <div class="stat-l">Projektów</div>
+        </div>
+        <div>
+          <div class="stat-n">⭐ 5</div>
+          <div class="stat-l">Ocena</div>
+        </div>
+      </div>
+      <div class="avail">
+        <div class="avail-dot"></div>
+        Przyjmuję zlecenia
+      </div>
+    </div>
+  </div>
+
+  <div class="domain">dev<span>roman</span>.pl</div>
+</body>
+</html>

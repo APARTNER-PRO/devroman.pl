@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jak wybrać programistę freelancera – 7 pytań, które warto zadać | devroman.pl</title>
+  <meta name="description" content="Zatrudniasz freelancera po raz pierwszy? Sprawdź 7 kluczowych pytań, czerwone flagi i praktyczny poradnik, jak znaleźć programistę godnego zaufania." />
+  <link rel="canonical" href="https://devroman.pl/blog/jak-wybrac-programiste-freelancera/" />
+  <meta property="og:title" content="Jak wybrać programistę freelancera – 7 pytań, które warto zadać" />
+  <meta property="og:description" content="Praktyczny poradnik dla firm, które szukają programisty freelancera. Czerwone flagi, dobre pytania i jak sprawdzić portfolio." />
+  <meta property="og:url" content="https://devroman.pl/blog/jak-wybrac-programiste-freelancera/" />
+  <meta property="og:type" content="article" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Jak wybrać programistę freelancera – 7 pytań, które warto zadać",
+    "author": { "@type": "Person", "name": "Roman Matviy", "url": "https://devroman.pl/" },
+    "publisher": { "@type": "Organization", "name": "devroman.pl", "url": "https://devroman.pl/" },
+    "datePublished": "2025-11-20",
+    "dateModified": "2025-11-20",
+    "mainEntityOfPage": "https://devroman.pl/blog/jak-wybrac-programiste-freelancera/"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#0b0e13;--bg2:#111520;--bg3:#161b28;--surface:#1c2235;--border:#242c42;--accent:#3b82f6;--accent2:#60a5fa;--green:#34d399;--text:#e2e8f0;--muted:#8494b2;--heading:#ffffff; }
+    html.light {
+      --bg:      #f8fafc;
+      --bg2:     #f1f5f9;
+      --bg3:     #e9eef6;
+      --surface: #dde6f5;
+      --border:  #c8d5e8;
+      --accent:  #2563eb;
+      --accent2: #1d4ed8;
+      --accent3: #3b82f6;
+      --green:   #059669;
+      --text:    #1e293b;
+      --muted:   #475569;
+      --heading: #0f172a;
+    }
+    *, *::before, *::after {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+    /* Theme toggle button */
+    .theme-toggle {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      padding: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); transform: scale(1.08); }
+    .theme-toggle .icon-moon { display: block; }
+    .theme-toggle .icon-sun  { display: none; }
+    html.light .theme-toggle .icon-moon { display: none; }
+    html.light .theme-toggle .icon-sun  { display: block; }
+    html.light nav { background: rgba(248,250,252,0.95); }
+    html { scroll-behavior:smooth; }
+    body { font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);font-size:17px;line-height:1.8; }
+    nav { background:rgba(11,14,19,0.95);border-bottom:1px solid var(--border);padding:0 2rem;height:60px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px); }
+    .nav-logo { font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:var(--heading);text-decoration:none; }
+    .nav-logo span { color:var(--accent); }
+    .nav-back { color:var(--muted);text-decoration:none;font-size:0.875rem;transition:color 0.2s; }
+    .nav-back:hover { color:var(--accent2); }
+    .post-hero { padding:64px 0 48px;border-bottom:1px solid var(--border);background:var(--bg2); }
+    .container { max-width:780px;margin:0 auto;padding:0 2rem; }
+    .post-cat { display:inline-flex;align-items:center;gap:6px;background:rgba(59,130,246,0.12);border:1px solid rgba(59,130,246,0.25);border-radius:999px;padding:4px 14px;font-size:12px;font-weight:600;color:var(--accent2);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:20px; }
+    .post-title { font-family:'Syne',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--heading);line-height:1.15;letter-spacing:-0.5px;margin-bottom:20px; }
+    .post-meta { display:flex;align-items:center;gap:1.5rem;color:var(--muted);font-size:0.875rem;flex-wrap:wrap; }
+    .post-body { padding:56px 0 80px; }
+    .post-body p { color:var(--muted);margin-bottom:1.4rem;font-weight:300; }
+    .post-body p strong { color:var(--text);font-weight:500; }
+    .post-body h2 { font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--heading);margin:2.5rem 0 1rem;letter-spacing:-0.3px; }
+    .post-body h3 { font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:700;color:var(--heading);margin:1.75rem 0 0.75rem; }
+    .post-body ul,.post-body ol { margin:1rem 0 1.4rem 1.5rem;color:var(--muted); }
+    .post-body li { margin-bottom:0.5rem;font-weight:300; }
+    .post-body li strong { color:var(--text);font-weight:500; }
+    .callout { background:rgba(59,130,246,0.07);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;margin:1.5rem 0;color:var(--text);font-size:0.95rem; }
+    .callout-green { border-left-color:var(--green);background:rgba(52,211,153,0.06); }
+    .callout-red { border-left-color:#f87171;background:rgba(248,113,113,0.06); }
+    .question-card { background:var(--bg3);border:1px solid var(--border);border-radius:14px;padding:1.5rem 1.75rem;margin:1.25rem 0;transition:border-color 0.2s; }
+    .question-card:hover { border-color:rgba(59,130,246,0.4); }
+    .q-num { font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem; }
+    .q-title { font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--heading);margin-bottom:0.6rem; }
+    .q-body { color:var(--muted);font-size:0.9rem;line-height:1.7;font-weight:300; }
+    .q-body strong { color:var(--text);font-weight:500; }
+    .flag-list { list-style:none;padding:0;margin:1rem 0; }
+    .flag-list li { display:flex;align-items:flex-start;gap:0.75rem;padding:0.6rem 0;border-bottom:1px solid rgba(36,44,66,0.5);color:var(--muted);font-size:0.9rem;font-weight:300; }
+    .flag-list li:last-child { border-bottom:none; }
+    .flag-list .icon { flex-shrink:0;font-size:1rem; }
+    .flag-list li strong { color:var(--text);font-weight:500; }
+    .cta-box { background:linear-gradient(135deg,var(--surface),var(--bg3));border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-top:3rem;position:relative;overflow:hidden; }
+    .cta-box::before { content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--green)); }
+    .cta-title { font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--heading);margin-bottom:0.75rem; }
+    .cta-desc { color:var(--muted);font-size:0.925rem;margin-bottom:1.5rem;line-height:1.7; }
+    .btn-row { display:flex;gap:1rem;flex-wrap:wrap; }
+    .btn { display:inline-flex;align-items:center;gap:0.4rem;padding:0.75rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.9rem;text-decoration:none;transition:all 0.2s;font-family:'DM Sans',sans-serif; }
+    .btn-primary { background:var(--accent);color:#fff;box-shadow:0 4px 16px rgba(59,130,246,0.3); }
+    .btn-primary:hover { background:#2563eb; }
+    .btn-secondary { background:var(--bg3);color:var(--text);border:1px solid var(--border); }
+    .btn-secondary:hover { border-color:var(--accent);color:var(--accent2); }
+    .author-box { display:flex;align-items:center;gap:1.25rem;background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-top:2.5rem; }
+    .author-ava { width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:1.1rem;flex-shrink:0; }
+    .author-name { font-family:'Syne',sans-serif;font-weight:700;color:var(--heading);margin-bottom:2px; }
+    .author-desc { color:var(--muted);font-size:0.85rem; }
+    footer { background:var(--bg2);border-top:1px solid var(--border);padding:2rem;text-align:center;color:var(--muted);font-size:0.8rem; }
+    footer a { color:var(--accent2);text-decoration:none; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="../" class="nav-logo">dev<span>roman</span>.pl</a>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="../#blog" class="nav-back">← Powrót do bloga</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+      <span class="icon-moon">🌙</span>
+      <span class="icon-sun">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<div class="post-hero">
+  <div class="container">
+    <div class="post-cat">Poradnik · Współpraca</div>
+    <h1 class="post-title">Jak wybrać programistę freelancera – 7 pytań, które warto zadać</h1>
+    <div class="post-meta">
+      <span>✍️ Roman Matviy</span>
+      <span>📅 20 listopada 2025</span>
+      <span>⏱ 6 min czytania</span>
+    </div>
+  </div>
+</div>
+
+<div class="post-body">
+  <div class="container">
+
+    <p>Znalezienie dobrego programisty freelancera to dziś jedno z trudniejszych zadań dla właściciela firmy. Portale jak Useme, Freelancehunt czy LinkedIn oferują setki profili – ale jak odróżnić solidnego specjalistę od kogoś, kto weźmie zaliczkę i zniknie lub dostarczy kod, którego nikt nie będzie w stanie utrzymać?</p>
+
+    <p>Piszę ten artykuł z perspektywy freelancera, który pracuje z klientami od ponad 7 lat. Znam obie strony stołu. Widziałem projekty przejęte po deweloperach, którzy zostawili po sobie klientowi chaos, i projekty, które działają bez interwencji od lat.</p>
+
+    <h2>7 pytań, które powinieneś zadać przed podpisaniem umowy</h2>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 01</div>
+      <div class="q-title">Czy mogę zobaczyć działające projekty podobne do mojego?</div>
+      <div class="q-body">Portfolio to nie tylko lista nazw i screenshoty. Poproś o <strong>linki do działających stron</strong> i sprawdź je osobiście – szybkość, responsywność, UX. Jeśli projekty są pod NDA, zapytaj o anonimowy opis: branża, zakres, użyte technologie. Dobry developer potrafi to opowiedzieć bez zdradzania danych klienta.</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 02</div>
+      <div class="q-title">Jak wygląda proces komunikacji i raportowania?</div>
+      <div class="q-body">Zapytaj, jak często będziesz informowany o postępach, przez jaki kanał (Telegram, e-mail, Slack) i co się dzieje, jeśli pojawi się problem lub opóźnienie. <strong>Dobry freelancer proponuje konkretny rytm komunikacji</strong> – na przykład krótki update co 2–3 dni. Jeśli odpowiedź brzmi „piszesz kiedy chcesz, odpisuję kiedy mogę" – to czerwona flaga.</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 03</div>
+      <div class="q-title">Co zawiera wycena i co jest poza nią?</div>
+      <div class="q-body">Wiele nieprzyjemnych niespodzianek wynika z nieprecyzyjnej oferty. Zapytaj wprost: <strong>co dokładnie wchodzi w podaną cenę?</strong> Hosting? Moduły zewnętrzne? Testy? Szkolenie z obsługi? Ewentualne poprawki po odbiorze? Im precyzyjniejsza specyfikacja przed startem, tym mniej konfliktów w trakcie.</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 04</div>
+      <div class="q-title">Kto będzie właścicielem kodu po zakończeniu projektu?</div>
+      <div class="q-body">To częsty problem przy współpracy z agencjami i freelancerami bez umowy. Upewnij się, że <strong>kod i wszystkie dostępy (hosting, domeny, CMS) są Twoje</strong> po zakończeniu współpracy. Dobry freelancer nie ma z tym problemu i sam zaproponuje odpowiedni zapis w umowie.</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 05</div>
+      <div class="q-title">Jak wygląda wsparcie techniczne po wdrożeniu?</div>
+      <div class="q-body">Większość problemów ze stronami pojawia się nie w dniu wdrożenia, lecz 2–3 miesiące później – przy aktualizacji WordPressa, zmianie modułu płatności lub wzroście ruchu. Zapytaj, czy freelancer oferuje <strong>stałe wsparcie</strong> i na jakich warunkach (stawka godzinowa, abonament, liczba godzin miesięcznie).</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 06</div>
+      <div class="q-title">Czy możesz skontaktować się z poprzednim klientem?</div>
+      <div class="q-body">Opinie na portalach można sfabrykować. <strong>Referencja od prawdziwego klienta jest weryfikowalna</strong> – wystarczy jeden mail lub krótka rozmowa. Freelancer, który ma za sobą długą, udaną współpracę, chętnie poda kontakt. Jeśli wszystkie opinie są anonimowe albo prośba o kontakt do klienta spotka się z wymówkami – sprawdzaj dalej.</div>
+    </div>
+
+    <div class="question-card">
+      <div class="q-num">Pytanie 07</div>
+      <div class="q-title">Co się stanie, jeśli projekt się opóźni lub nie spełni oczekiwań?</div>
+      <div class="q-body">Nie chodzi o pesymizm – chodzi o dojrzałość zawodową. <strong>Dobry freelancer ma gotową odpowiedź</strong>: jak obsługuje reklamacje, co jest w umowie na wypadek opóźnienia, czy zwraca zaliczkę przy niewykonaniu zakresu. Jeśli pytanie sprawia, że rozmówca staje się defensywny – to sygnał ostrzegawczy.</div>
+    </div>
+
+    <h2>Czerwone flagi – czego unikać</h2>
+
+    <div class="callout callout-red">
+      Poniższe sygnały nie oznaczają automatycznie złego programisty – ale każdy z nich powinien skłonić do zadania dodatkowych pytań.
+    </div>
+
+    <ul class="flag-list">
+      <li><span class="icon">🚩</span><div><strong>Wycena bez pytań</strong> – dostałeś cenę w 5 minut po wysłaniu lakonicznego opisu? Dobry developer potrzebuje czasu na zrozumienie zakresu.</div></li>
+      <li><span class="icon">🚩</span><div><strong>Brak umowy lub „możemy na słowo"</strong> – zawsze powinna być umowa lub przynajmniej szczegółowa specyfikacja w e-mailu z potwierdzeniem obu stron.</div></li>
+      <li><span class="icon">🚩</span><div><strong>Portfolio tylko ze screenshotów</strong> – bez działających linków i bez możliwości weryfikacji pracy.</div></li>
+      <li><span class="icon">🚩</span><div><strong>Żądanie 100% płatności z góry</strong> – standardem jest 30–50% zaliczki, reszta po odbiorze lub w transzach.</div></li>
+      <li><span class="icon">🚩</span><div><strong>Dostępy do hostingu i domeny tylko u niego</strong> – po zakończeniu projektu powinieneś mieć pełny dostęp do wszystkiego.</div></li>
+      <li><span class="icon">🚩</span><div><strong>Brak odpowiedzi dłużej niż 48h na etapie ofertowania</strong> – jeśli teraz nie odpowiada szybko, co będzie w trakcie projektu?</div></li>
+    </ul>
+
+    <h2>Jak weryfikować freelancera – praktycznie</h2>
+
+    <ul>
+      <li><strong>GitHub</strong> – sprawdź aktywność konta. Widoczne repozytoria, commits z ostatnich miesięcy, projekty open source to dobry znak.</li>
+      <li><strong>LinkedIn</strong> – zweryfikuj historię zatrudnienia, rekomendacje od współpracowników i klientów.</li>
+      <li><strong>Portale freelancerskie</strong> – Freelancehunt, Useme, Upwork mają systemy opinii powiązanych z konkretnymi zleceniami i użytkownikami.</li>
+      <li><strong>Mały projekt testowy</strong> – zanim zlecisz duży projekt, zaproponuj małe, płatne zadanie. To najlepsza weryfikacja jakości kodu i komunikacji.</li>
+    </ul>
+
+    <div class="callout callout-green">
+      <strong>Jak ja pracuję z nowymi klientami:</strong> zawsze zaczynam od rozmowy o projekcie, zadaję pytania, przygotowuję pisemną specyfikację i podpisuję prostą umowę z harmonogramem płatności. Kod jest komentowany, dostępy są Twoje. Po zakończeniu projektu jestem dostępny na bieżące wsparcie.
+    </div>
+
+    <h2>Podsumowanie</h2>
+
+    <p>Dobry programista freelancer to ktoś, kto <strong>pyta, zanim wycenia</strong>, <strong>komunikuje się regularnie</strong>, <strong>dotrzymuje terminów</strong> i nie boi się trudnych pytań. Portfolio i opinie to punkt wyjścia – rozmowa jest weryfikacją.</p>
+
+    <p>Jeśli po tej rozmowie masz wątpliwości – słuchaj intuicji. Projekt IT, który zaczyna się od złych relacji, rzadko kończy się dobrze.</p>
+
+    <div class="cta-box">
+      <div class="cta-title">Szukasz programisty do swojego projektu?</div>
+      <div class="cta-desc">Napisz mi kilka słów o tym, co chcesz zbudować. Odpiszę szczerze – czy i jak mogę pomóc, w jakim czasie i w jakiej cenie. Bez presji, bez ukrytych kosztów.</div>
+      <div class="btn-row">
+        <a href="https://t.me/RomanMatviy" class="btn btn-primary" target="_blank" rel="noopener">💬 Napisz na Telegramie</a>
+        <a href="/cdn-cgi/l/email-protection#b3c1dcded2ddf3ded2c7c5daca9dc3c39dc6d2" class="btn btn-secondary">✉️ <span class="__cf_email__" data-cfemail="7f0d10121e113f121e0b091606510f0f510a1e">[email&#160;protected]</span></a>
+      </div>
+    </div>
+
+    <div class="author-box">
+      <div class="author-ava">RM</div>
+      <div>
+        <div class="author-name">Roman Matviy</div>
+        <div class="author-desc">Freelance full-stack developer. Pracuję z klientami z Polski i Europy od ponad 7 lat. Laravel, PrestaShop, WordPress, Vue.js. <a href="../" style="color:var(--accent2)">→ devroman.pl</a></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <a href="../">devroman.pl</a> · Roman Matviy – Full-Stack Developer · <a 
