@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ═══ SEO: PRIMARY META ═══ -->
+  <title>Blog – Artykuły o programowaniu, e-commerce i Laravel | devroman.pl</title>
+  <meta name="description" content="Praktyczne artykuły o tworzeniu sklepów PrestaShop, aplikacjach Laravel, bezpieczeństwie WordPress i współpracy z freelancerami. Dla właścicieli firm i menedżerów projektów." />
+  <meta name="author" content="Roman Matviy" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <link rel="canonical" href="https://devroman.pl/blog/" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+
+  <!-- PWA manifest -->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#3b82f6" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#2563eb" media="(prefers-color-scheme: light)" />
+
+  <!-- ═══ SEO: OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://devroman.pl/blog/" />
+  <meta property="og:site_name" content="devroman.pl" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:title" content="Blog – Artykuły o programowaniu i e-commerce" />
+  <meta property="og:description" content="Praktyczne artykuły o tworzeniu sklepów PrestaShop, aplikacjach Laravel, bezpieczeństwie WordPress i współpracy z freelancerami dla firm z Polski i Europy." />
+  <meta property="og:image" content="https://devroman.pl/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- ═══ SEO: TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog – Artykuły o programowaniu i e-commerce" />
+  <meta name="twitter:description" content="Praktyczne artykuły o PrestaShop, Laravel, WordPress i tworzeniu aplikacji webowych dla firm." />
+  <meta name="twitter:image" content="https://devroman.pl/og-image.jpg" />
+
+  <!-- ═══ SEO: SCHEMA.ORG ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://devroman.pl/blog/",
+        "url": "https://devroman.pl/blog/",
+        "name": "Blog – Artykuły o programowaniu i e-commerce",
+        "description": "Kolekcja praktycznych artykułów o tworzeniu sklepów PrestaShop, aplikacjach Laravel, bezpieczeństwie WordPress i współpracy z freelancerami.",
+        "isPartOf": { "@id": "https://devroman.pl/#website" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "Article",
+              "position": 1,
+              "headline": "PrestaShop czy WooCommerce – co wybrać dla polskiego sklepu w 2026?",
+              "url": "https://devroman.pl/blog/prestashop-vs-woocommerce/",
+              "datePublished": "2025-08-15",
+              "articleSection": "E-commerce"
+            },
+            {
+              "@type": "Article",
+              "position": 2,
+              "headline": "Ile kosztuje sklep internetowy PrestaShop w 2026?",
+              "url": "https://devroman.pl/blog/ile-kosztuje-prestashop/",
+              "datePublished": "2025-10-10",
+              "articleSection": "E-commerce"
+            },
+            {
+              "@type": "Article",
+              "position": 3,
+              "headline": "Migracja sklepu internetowego bez przestojów – jak to zrobić?",
+              "url": "https://devroman.pl/blog/migracja-sklepu/",
+              "datePublished": "2026-02-03",
+              "articleSection": "E-commerce"
+            },
+            {
+              "@type": "Article",
+              "position": 4,
+              "headline": "Bezpieczeństwo WordPress – 10 rzeczy, które powinieneś zrobić już dziś",
+              "url": "https://devroman.pl/blog/bezpieczenstwo-wordpress/",
+              "datePublished": "2026-01-15",
+              "articleSection": "Bezpieczeństwo"
+            },
+            {
+              "@type": "Article",
+              "position": 5,
+              "headline": "Jak wybrać programistę freelancera – 7 pytań, które warto zadać",
+              "url": "https://devroman.pl/blog/jak-wybrac-freelancera/",
+              "datePublished": "2025-11-20",
+              "articleSection": "Poradnik"
+            },
+            {
+              "@type": "Article",
+              "position": 6,
+              "headline": "Laravel vs WordPress – co wybrać dla firmy w 2026?",
+              "url": "https://devroman.pl/blog/laravel-vs-wordpress/",
+              "datePublished": "2025-12-08",
+              "articleSection": "Technologie"
+            },
+            {
+              "@type": "Article",
+              "position": 7,
+              "headline": "REST API – co to jest i dlaczego Twój sklep go potrzebuje?",
+              "url": "https://devroman.pl/blog/rest-api/",
+              "datePublished": "2026-02-20",
+              "articleSection": "Backend"
+            },
+            {
+              "@type": "Article",
+              "position": 8,
+              "headline": "CRM na zamówienie vs gotowe rozwiązanie – co wybrać dla firmy?",
+              "url": "https://devroman.pl/blog/crm-na-zamowienie/",
+              "datePublished": "2026-03-07",
+              "articleSection": "CRM"
+            },
+            {
+              "@type": "Article",
+              "position": 9,
+              "headline": "Dlaczego polskie firmy coraz częściej zatrudniają ukraińskich programistów?",
+              "url": "https://devroman.pl/blog/ukrainski-developer/",
+              "datePublished": "2026-03-22",
+              "articleSection": "Współpraca"
+            }
+          ]
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://devroman.pl/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://devroman.pl/blog/" }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://devroman.pl/#website",
+        "url": "https://devroman.pl/",
+        "name": "devroman.pl"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0b0e13;
+      --bg2:       #111520;
+      --bg3:       #161b28;
+      --surface:   #1c2235;
+      --border:    #242c42;
+      --accent:    #3b82f6;
+      --accent2:   #60a5fa;
+      --text:      #e2e8f0;
+      --muted:     #8494b2;
+      --heading:   #ffffff;
+      --radius:    12px;
+    }
+
+    html.light {
+      --bg:        #f8fafc;
+      --bg2:       #f1f5f9;
+      --bg3:       #e9eef6;
+      --surface:   #dde6f5;
+      --border:    #c8d5e8;
+      --accent:    #2563eb;
+      --accent2:   #1d4ed8;
+      --text:      #1e293b;
+      --muted:     #475569;
+      --heading:   #0f172a;
+    }
+
+    *, *::before, *::after {
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE TEXTURE ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(11,14,19,0.88);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: var(--heading);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff !important;
+      padding: 0.45rem 1.1rem;
+      border-radius: 8px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: #2563eb !important; }
+
+    /* ── THEME TOGGLE ── */
+    .theme-toggle {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      flex-shrink: 0;
+      transition: border-color 0.2s, background 0.2s, transform 0.15s;
+      padding: 0;
+    }
+    .theme-toggle:hover {
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+    .theme-toggle .icon-moon  { display: block; }
+    .theme-toggle .icon-sun   { display: none; }
+    html.light .theme-toggle .icon-moon { display: none; }
+    html.light .theme-toggle .icon-sun  { display: block; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    section { padding: 100px 0; }
+
+    /* ── HERO ── */
+    #hero {
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      margin-top: 64px;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -200px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 80px 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      color: var(--heading);
+      line-height: 1.1;
+      letter-spacing: -1px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line2 {
+      display: block;
+      background: linear-gradient(90deg, var(--accent2), #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 2.5rem;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 24px rgba(59,130,246,0.35);
+    }
+    .btn-primary:hover { background: #2563eb; transform: translateY(-1px); }
+
+    /* ── SECTION HEADERS ── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent2);
+      margin-bottom: 1rem;
+    }
+    .section-label::before { content: '//'; opacity: 0.5; }
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 800;
+      color: var(--heading);
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 580px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── BLOG GRID ── */
+    #blog { background: var(--bg); }
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+    .blog-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      transition: all 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card:hover { border-color: rgba(59,130,246,0.5); transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.3); }
+    .blog-card-cat {
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--accent2);
+    }
+    .blog-card-title {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.97rem;
+      color: var(--heading); line-height: 1.3;
+    }
+    .blog-card-desc { color: var(--muted); font-size: 0.835rem; line-height: 1.65; flex: 1; }
+    .blog-card-meta {
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem;
+      padding-top: 0.65rem; border-top: 1px solid var(--border);
+    }
+    .blog-card-arrow { color: var(--accent2); font-size: 1rem; transition: transform 0.2s; }
+    .blog-card:hover .blog-card-arrow { transform: translateX(4px); }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb {
+      padding-top: 100px;
+      margin-top: 0;
+      background: var(--bg2);
+    }
+    .breadcrumb nav {
+      position: static;
+      background: none;
+      border: none;
+      margin: 0;
+      padding: 0;
+    }
+    .breadcrumb-list {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      list-style: none;
+      align-items: center;
+    }
+    .breadcrumb-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .breadcrumb-list li:not(:last-child)::after {
+      content: '/';
+      color: var(--border);
+    }
+    .breadcrumb-list a {
+      color: var(--accent2);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+    .breadcrumb-list a:hover { color: var(--text); text-decoration: underline; }
+    .breadcrumb-list li:last-child {
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 0;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--heading);
+    }
+    .footer-logo span { color: var(--accent); }
+    .footer-copy { color: var(--muted); font-size: 0.8rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      nav { position: relative; }
+      .nav-links { display: none; }
+      section { padding: 60px 0; }
+      #hero { margin-top: 0; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .container { padding: 0 1.5rem; }
+      .footer-inner { flex-direction: column; gap: 1rem; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+      .breadcrumb-list { font-size: 0.8rem; }
+    }
+
+    @supports (-webkit-backdrop-filter: blur(10px)) {
+      nav { -webkit-backdrop-filter: blur(20px); }
+    }
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">dev<span>roman</span>.pl</a>
+    <ul class="nav-links">
+      <li><a href="/#about">O mnie</a></li>
+      <li><a href="/#services">Usługi</a></li>
+      <li><a href="/#portfolio">Portfolio</a></li>
+      <li><a href="/#blog">Blog</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/#contact" class="nav-cta">Kontakt</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Przełącz motyw">
+      <span class="icon-moon">🌙</span>
+      <span class="icon-sun">☀️</span>
+    </button>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<section class="breadcrumb">
+  <div class="container">
+    <nav aria-label="Nawigacja łańcuchowa">
+      <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a itemprop="item" href="https://devroman.pl/">
+            <span itemprop="name">Strona główna</span>
+          </a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <span itemprop="name">Blog</span>
+          <meta itemprop="position" content="2" />
+        </li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO / HEADER -->
+<section id="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="section-label">Wiedza i porady</div>
+      <h1 class="hero-title">
+        Artykuły o e-commerce<br>
+        <span class="line2">Laravel · WordPress · PrestaShop</span>
+      </h1>
+      <p class="hero-sub">
+        Praktyczne materiały dla właścicieli firm i menedżerów projektów – od wyboru technologii po integracje systemów płatności, bezpieczeństwo i współpracę z developerami.
+      </p>
+      <a href="/" class="btn btn-primary">← Wróć na stronę główną</a>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG ARTICLES -->
+<section id="blog">
+  <div class="container">
+    <div class="section-label">Wszystkie artykuły</div>
+    <h2 class="section-title">Blog devroman.pl</h2>
+    <p class="section-sub">9 artykułów o e-commerce, technologiach webowych i współpracy z freelancerami.</p>
+
+    <div class="blog-grid">
+      <!-- Article 1 -->
+      <a href="prestashop-vs-woocommerce.html" class="blog-card">
+        <div class="blog-card-cat">E-commerce · Porównanie</div>
+        <div class="blog-card-title">PrestaShop czy WooCommerce – co wybrać dla polskiego sklepu w 2026?</div>
+        <div class="blog-card-desc">Rzetelne porównanie platform, koszty, integracje z polskim rynkiem i przykłady z projektów.</div>
+        <div class="blog-card-meta">
+          <span>📅 15 sie 2025 · ⏱ 8 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="ile-kosztuje-prestashop.html" class="blog-card">
+        <div class="blog-card-cat">E-commerce · Ceny</div>
+        <div class="blog-card-title">Ile kosztuje sklep internetowy PrestaShop w 2026?</div>
+        <div class="blog-card-desc">Realne liczby z rynku – hosting, moduły, praca programisty, pułapki kosztowe i przykład projektu za 14 800 zł.</div>
+        <div class="blog-card-meta">
+          <span>📅 10 paź 2025 · ⏱ 7 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="migracja-sklepu.html" class="blog-card">
+        <div class="blog-card-cat">E-commerce · Migracja</div>
+        <div class="blog-card-title">Migracja sklepu internetowego bez przestojów – jak to zrobić?</div>
+        <div class="blog-card-desc">6 faz procesu, tabela kierunków migracji w Polsce, najczęstsze błędy i realne case study.</div>
+        <div class="blog-card-meta">
+          <span>📅 3 lut 2026 · ⏱ 10 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 4 -->
+      <a href="bezpieczenstwo-wordpress.html" class="blog-card">
+        <div class="blog-card-cat">Bezpieczeństwo</div>
+        <div class="blog-card-title">Bezpieczeństwo WordPress – 10 rzeczy, które powinieneś zrobić już dziś</div>
+        <div class="blog-card-desc">10 konkretnych kroków z oznaczeniem trudności – od prostych zmian hasła po konfigurację serwera.</div>
+        <div class="blog-card-meta">
+          <span>📅 15 sty 2026 · ⏱ 9 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 5 -->
+      <a href="jak-wybrac-freelancera.html" class="blog-card">
+        <div class="blog-card-cat">Poradnik · Współpraca</div>
+        <div class="blog-card-title">Jak wybrać programistę freelancera – 7 pytań, które warto zadać</div>
+        <div class="blog-card-desc">Czerwone flagi, dobre pytania i praktyczna weryfikacja – co sprawdzić zanim podpiszesz umowę.</div>
+        <div class="blog-card-meta">
+          <span>📅 20 lis 2025 · ⏱ 6 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 6 -->
+      <a href="laravel-vs-wordpress.html" class="blog-card">
+        <div class="blog-card-cat">Backend · Technologie</div>
+        <div class="blog-card-title">Laravel vs WordPress – co wybrać dla firmy w 2026?</div>
+        <div class="blog-card-desc">Kiedy WordPress wystarczy, a kiedy potrzebujesz dedykowanej aplikacji. Porównanie kosztów i przypadków.</div>
+        <div class="blog-card-meta">
+          <span>📅 8 gru 2025 · ⏱ 7 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 7 -->
+      <a href="rest-api.html" class="blog-card">
+        <div class="blog-card-cat">Backend · Integracje</div>
+        <div class="blog-card-title">REST API – co to jest i dlaczego Twój sklep go potrzebuje?</div>
+        <div class="blog-card-desc">Analogia z kelnerem, schemat przepływu danych i 6 konkretnych przypadków użycia w e-commerce.</div>
+        <div class="blog-card-meta">
+          <span>📅 20 lut 2026 · ⏱ 7 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 8 -->
+      <a href="crm-na-zamowienie.html" class="blog-card">
+        <div class="blog-card-cat">CRM · Laravel · Biznes</div>
+        <div class="blog-card-title">CRM na zamówienie vs gotowe rozwiązanie – co wybrać dla firmy?</div>
+        <div class="blog-card-desc">Porównanie Pipedrive, HubSpot i własnego CRM na Laravel. Kalkulator kosztów na 3 lata.</div>
+        <div class="blog-card-meta">
+          <span>📅 7 mar 2026 · ⏱ 8 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- Article 9 -->
+      <a href="ukrainski-developer.html" class="blog-card">
+        <div class="blog-card-cat">Współpraca · Freelance</div>
+        <div class="blog-card-title">Dlaczego polskie firmy coraz częściej zatrudniają ukraińskich programistów?</div>
+        <div class="blog-card-desc">Szczera perspektywa ukraińskiego developera – jak wygląda codzienna współpraca z polskimi firmami.</div>
+        <div class="blog-card-meta">
+          <span>📅 22 mar 2026 · ⏱ 7 min</span>
+          <span class="blog-card-arrow">→</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">dev<span>roman</span>.pl</div>
+    <div class="footer-copy">© 2026 Roman Matviy · Full-Stack Developer · Lwów, Ukraina</div>
+    <div class="footer-links">
+      <a href="https://t.me/RomanMatviy" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:roman@matviy.pp.ua">E-mail</a>
+      <a href="https://linkedin.com/in/MatviyRoman" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/MatviyRoman" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Theme toggle
+  (function(){
+    var btn = document.getElementById('themeToggle');
+    if(!btn) return;
+    btn.addEventListener('click', function(){
+      document.documentElement.classList.toggle('light');
+      try{ localStorage.setItem('theme',
+        document.documentElement.classList.contains('light') ? 'light' : 'dark');
+      }catch(e){}
+    });
+    if(localStorage.getItem('theme')==='light') document.documentElement.classList.add('light');
+  })();
+</script>
+
+</body>
+</html>
