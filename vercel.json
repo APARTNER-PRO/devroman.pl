@@ -99,6 +99,16 @@
       "source": "/blog/crm-na-zamowienie/",
       "destination": "/blog/crm-na-zamowienie.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/bezpieczenstwo-wordpress",
+      "destination": "/blog/bezpieczenstwo-wordpress.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bezpieczenstwo-wordpress/",
+      "destination": "/blog/bezpieczenstwo-wordpress.html",
+      "permanent": true
     }
   ]
 }
