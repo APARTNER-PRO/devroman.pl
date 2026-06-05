@@ -41,6 +41,16 @@
       "permanent": true
     },
     {
+      "source": "/blog/rest-api",
+      "destination": "/blog/rest-api.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rest-api/",
+      "destination": "/blog/rest-api.html",
+      "permanent": true
+    },
+    {
       "source": "/blog/prestashop-vs-woocommerce",
       "destination": "/blog/prestashop-vs-woocommerce.html",
       "permanent": true
