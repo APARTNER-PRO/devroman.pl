@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/blog/ukrainski-programista-dla-polskiej-firmy",
+      "destination": "/blog/ukrainski-developer.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ukrainski-programista-dla-polskiej-firmy/",
+      "destination": "/blog/ukrainski-developer.html",
+      "permanent": true
+    }
+  ]
+}
