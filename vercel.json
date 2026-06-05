@@ -109,6 +109,16 @@
       "source": "/blog/bezpieczenstwo-wordpress/",
       "destination": "/blog/bezpieczenstwo-wordpress.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/ukrainski-developer",
+      "destination": "/blog/ukrainski-developer.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ukrainski-developer/",
+      "destination": "/blog/ukrainski-developer.html",
+      "permanent": true
     }
   ]
 }
