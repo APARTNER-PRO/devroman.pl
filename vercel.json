@@ -19,6 +19,16 @@
       "source": "/blog/ile-kosztuje-sklep-prestashop/",
       "destination": "/blog/ile-kosztuje-prestashop.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/laravel-vs-wordpress",
+      "destination": "/blog/laravel-vs-wordpress.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/laravel-vs-wordpress/",
+      "destination": "/blog/laravel-vs-wordpress.html",
+      "permanent": true
     }
   ]
 }
