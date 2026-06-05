@@ -69,6 +69,26 @@
       "source": "/blog/migracja-sklepu/",
       "destination": "/blog/migracja-sklepu.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/crm-na-zamowienie-vs-gotowy",
+      "destination": "/blog/crm-na-zamowienie.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-na-zamowienie-vs-gotowy/",
+      "destination": "/blog/crm-na-zamowienie.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-na-zamowienie",
+      "destination": "/blog/crm-na-zamowienie.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/crm-na-zamowienie/",
+      "destination": "/blog/crm-na-zamowienie.html",
+      "permanent": true
     }
   ]
 }
