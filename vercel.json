@@ -29,6 +29,26 @@
       "source": "/blog/laravel-vs-wordpress/",
       "destination": "/blog/laravel-vs-wordpress.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/rest-api-co-to-jest",
+      "destination": "/blog/rest-api.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/rest-api-co-to-jest/",
+      "destination": "/blog/rest-api.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/prestashop-vs-woocommerce",
+      "destination": "/blog/prestashop-vs-woocommerce.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/prestashop-vs-woocommerce/",
+      "destination": "/blog/prestashop-vs-woocommerce.html",
+      "permanent": true
     }
   ]
 }
