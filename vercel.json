@@ -49,6 +49,26 @@
       "source": "/blog/prestashop-vs-woocommerce/",
       "destination": "/blog/prestashop-vs-woocommerce.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/migracja-sklepu-internetowego",
+      "destination": "/blog/migracja-sklepu.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/migracja-sklepu-internetowego/",
+      "destination": "/blog/migracja-sklepu.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/migracja-sklepu",
+      "destination": "/blog/migracja-sklepu.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/migracja-sklepu/",
+      "destination": "/blog/migracja-sklepu.html",
+      "permanent": true
     }
   ]
 }
