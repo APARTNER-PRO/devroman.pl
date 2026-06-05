@@ -9,6 +9,16 @@
       "source": "/blog/ukrainski-programista-dla-polskiej-firmy/",
       "destination": "/blog/ukrainski-developer.html",
       "permanent": true
+    },
+    {
+      "source": "/blog/ile-kosztuje-sklep-prestashop",
+      "destination": "/blog/ile-kosztuje-prestashop.html",
+      "permanent": true
+    },
+    {
+      "source": "/blog/ile-kosztuje-sklep-prestashop/",
+      "destination": "/blog/ile-kosztuje-prestashop.html",
+      "permanent": true
     }
   ]
 }
